@@ -11,7 +11,13 @@
     <body>
         <div class="app">
             <div class="admin__title">Trang quản trị</div>
-            <div class="admin__filter">filter</div>
+            <div class="admin__filter">
+               filter
+                 <c:forEach var="item" items="${ProductModel}">
+                      <div>${item.price}</div>
+                </c:forEach>
+            
+            </div>
             <div class="admin__content">
                 <div class="admin__nav">
                     <h4 class="admin__nav-item">

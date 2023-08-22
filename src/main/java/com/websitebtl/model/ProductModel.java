@@ -1,6 +1,6 @@
 package com.websitebtl.model;
 
-public class ProductModel {
+public class ProductModel extends AbstractModel {
 	private Long userId;
 	private String thumbnai;
 	private String shortDescription;

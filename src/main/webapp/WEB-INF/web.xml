@@ -6,6 +6,10 @@
 
 	<display-name>BTL_OOP_JAVA</display-name>
 
+	<listener>
+		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+	</listener>
+
 	<session-config>
 		<tracking-mode>COOKIE</tracking-mode>
 	</session-config>
