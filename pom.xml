@@ -6,14 +6,15 @@
 	<artifactId>BTL_OOP_JAVA</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
-	
+
 	<properties>
 		<jsp.api.version>2.0</jsp.api.version>
+		<jstl.version>1.2</jstl.version>
 		<servlet.api.version>3.1.0</servlet.api.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -24,6 +25,11 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>${servlet.api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-beanutils</groupId>
