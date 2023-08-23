@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+
+.edit__app {
+  background-color: #111111;
+  color: #fff;
+  width: 100vw;
+  height: 100vh;
+}
+table, th, td {
+  border:1px solid #fff;
+  height: 50px;
+  width: 100px;
+}
+.edit__input {
+    width: 99.5%;
+    height: 90%;
+}
+.edit__title {
+	padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 200px;
+}
+.edit__name {
+      width: 5px;
+}
+.edit__submit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: orange;
+}
+.edit__table {
+    width: 95%;
+    margin: 40px;
+}

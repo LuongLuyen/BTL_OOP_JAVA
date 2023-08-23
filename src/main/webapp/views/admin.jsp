@@ -37,6 +37,9 @@
                 <div class="filter__admin">
                     <input class="filter__input" placeholder="Tìm kiếm"/>
                     <span class="search">Filter</span>
+                       <a class="admin__navi" href="<c:url value='/edit'/>" >
+                            edit
+                        </a>
                 </div>
             </div>
             <div class="admin__content">
