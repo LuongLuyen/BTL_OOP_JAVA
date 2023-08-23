@@ -13,10 +13,6 @@
             <div class="admin__title">Trang quản trị</div>
             <div class="admin__filter">
                filter
-                 <c:forEach var="item" items="${ProductModel}">
-                      <div>${item.price}</div>
-                </c:forEach>
-            
             </div>
             <div class="admin__content">
                 <div class="admin__nav">
@@ -44,46 +40,18 @@
                 </div>
                 <div class="admin__main">
                     <table style="width:100%">
-                        <tr>
-                          <th>Tên sản phẩm</th>
-                          <th>Thể loại</th>
-                          <th>Giá</th>
-                        </tr>
-                        <tr>
-                          <td>Áo nam</td>
-                          <td>Áo Sơ-mi</td>
-                          <td>100.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Quần nam</td>
-                          <td>Quần thể thao</td>
-                          <td>55.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Laptop</td>
-                          <td>Acer</td>
-                          <td>15.000.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Ti vi</td>
-                          <td>Samsung</td>
-                          <td>5.000.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Ti vi</td>
-                          <td>Samsung</td>
-                          <td>5.000.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Ti vi</td>
-                          <td>Samsung</td>
-                          <td>5.000.000vnd</td>
-                        </tr>
-                        <tr>
-                          <td>Ti vi</td>
-                          <td>Samsung</td>
-                          <td>5.000.000vnd</td>
-                        </tr>
+                              <tr>
+                                  <th>Tên sản phẩm</th>
+                                  <th>Thể loại</th>
+                                  <th>Giá</th>
+                              </tr>
+                         <c:forEach var="item" items="${ProductModel}">
+                              <tr>
+                                  <td>${item.shortDescription}</td>
+                                  <td>${item.category}</td>
+                                  <td>${item.price}</td>
+                              </tr>
+                          </c:forEach>
                       </table>
                 </div>
             </div>

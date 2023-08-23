@@ -9,12 +9,21 @@
         <title>Home</title>
     </head>
     <body>
-        <div >
-            <a href="<c:url value='/admin'/>" >
-                <small> 
+        <div class="app">
+            <div class="title">
+                <a class="web__navi" href="<c:url value='/admin'/>" >
                     Trang quản trị
-                </small>
-            </a>
+                </a>
+            </div>
+            <div class="web__form">
+                <form class="form" action="">
+                    <label for="fname">UserName:</label><br>
+                    <input class="web__login" type="text" id="fname" name="fname" value="UserName"><br>
+                    <label for="lname">Password:</label><br>
+                    <input class="web__login" type="text" id="lname" name="lname" value="Password"><br><br>
+                    <button class="login__btn" type="submit">Login</button>
+                  </form> 
+            </div>
         </div>
     </body>
 </html>

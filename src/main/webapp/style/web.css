@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+.app {
+    color: #fff;
+    background-color: #111111;
+    width: 100vw;
+    height: 100vh;
+}
+.web__navi {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+}
+.web__form {
+	margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+}
+.title {
+	display: flex;
+    justify-content: center;
+}
+.web__login {
+    width: 300px;
+    margin: 20px 0 20px 0;
+    height: 30px;
+}
+.form {
+	border: solid 2px #191919;
+    border-radius: 10px;
+}
+.login__btn {
+    width: 100px;
+    margin-left: 35%;
+    height: 30px;
+}
