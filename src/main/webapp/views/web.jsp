@@ -5,11 +5,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="<c:url value='/style/web.css' />" rel="stylesheet" type="text/css" media="all"/>
+         <link href="<c:url value='/style/styleWeb.css' />" rel="stylesheet" type="text/css" media="all"/>
         <title>Home</title>
     </head>
     <body>
-        <div class="app">
+        <div class="web__app">
             <div class="title">
                 <a class="web__navi" href="<c:url value='/admin'/>" >
                     Trang quản trị

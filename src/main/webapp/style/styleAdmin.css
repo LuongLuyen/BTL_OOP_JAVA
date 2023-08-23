@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.app {
+.admin__app {
   background-color: #111111;
   color: #fff;
   width: 100vw;
@@ -24,6 +24,38 @@ body {
   height: 50px;
   border-radius: 10px;
 }
+.filter__admin {
+   margin: 10px;
+   font-size: 1.3rem;
+}
+
+.filter__input {
+	width: 200px;
+    height: 20px;
+    border-radius: 10px;
+}
+.filter__btn {
+    background-color: orange;
+    color: #333;
+    width: 150px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.search {
+    color: rgb(69, 242, 6);
+}
+.filter__btn:hover {
+    background-color: rgb(69, 242, 6);
+}
+.admin__nav-item:hover{
+    background-color: rgb(69, 242, 6);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding-left: 20px;
+    color: #333;
+}
+
 .admin__content {
   display: flex;
   justify-content: center;
@@ -43,17 +75,24 @@ body {
   background-color: #191919;
   margin-top: 10px;
   border-radius: 10px;
+   padding: 20px;
 }
 .admin__nav-item {
   margin-left: 20%;
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
-.admin__main {
-  padding: 20px;
-}
+
 table, th, td {
   border:1px solid #fff;
   height: 50px;
   width: 100px;
+}
+.thao__tacf {
+  width: 10px;
+   color: rgb(69, 242, 6);
+}
+.thao__tacd {
+  width: 10px;
+   color: red;
 }
