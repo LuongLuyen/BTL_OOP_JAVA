@@ -14,18 +14,16 @@
 		<div>
 			<div class="edit__title">Edit Product</div>
 			<form action="<c:url value='/edit'/>" method="post">
-
-				<c:forEach var="item" items="${ProductModel}">
 					<table class="edit__table">
 						<tr>
 							<th class="edit__name">Tên sản phẩm</th>
 							<td><input class="edit__input" type="text" id="fname"
-								name="fname" value="${item.shortDescription}"></td>
+								name="fname" value="text"></td>
 						</tr>
 						<tr>
 							<th class="edit__name">Thể loại</th>
 							<td><select class="edit__input">
-									<option>${item.category}</option>
+									<option></option>
 									<option>Quần áo nam</option>
 									<option>Tivi</option>
 									<option>Điện thoại</option>
@@ -36,15 +34,14 @@
 						<tr>
 							<th class="edit__name">Giá</th>
 							<td><input class="edit__input" type="text" id="fname"
-								name="fname" value="${item.price}"></td>
+								name="fname" value="text"></td>
 						</tr>
 						<tr>
 							<th class="edit__name">Trạng thái</th>
 							<td><input class="edit__input" type="text" id="fname"
-								name="fname" value="${item.status}"></td>
+								name="fname" value="text"></td>
 						</tr>
 					</table>
-				</c:forEach>
 				<div class="edit__submit">
 					<input class="edit__submit" type="submit" value="Submit">
 				</div>

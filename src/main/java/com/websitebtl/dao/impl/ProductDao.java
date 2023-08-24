@@ -26,4 +26,10 @@ public class ProductDao extends AbstractDao implements IProductDao {
 		return query(sql, new ProductMapper(),category);
 	}
 
+	@Override
+	public List<ProductModel> findById(Long id) {
+		String sql = "SELECT * FROM product where id = ?";
+		return query(sql, new ProductMapper(),id);
+	}
+
 }

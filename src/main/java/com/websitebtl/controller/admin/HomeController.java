@@ -35,11 +35,17 @@ public class HomeController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
 			rd.forward(request, response);
 		}else if(type.equals("delete")) {
-			String idString = request.getParameter("delete");
-			long id = Long.parseLong(idString);
+			String idDelete = request.getParameter("delete");
+			long id = Long.parseLong(idDelete);
 		    ProductService.delete(id);
 			request.setAttribute("ProductModel", ProductService.findAll());
 			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
+			rd.forward(request, response);
+		}else if(type.equals("edit")) {
+			String idProduct = request.getParameter("edit");
+			long id = Long.parseLong(idProduct);
+			request.setAttribute("ProductModel", ProductService.findById(id));
+			RequestDispatcher rd = request.getRequestDispatcher("/views/edit.jsp");
 			rd.forward(request, response);
 		}
 	}

@@ -110,3 +110,10 @@ table, th, td {
   font-size: 1.2rem;
   color: #fff;
 }
+.price{
+  width: 20px;
+}
+.filter__btn-name {
+	text-decoration: none;
+    color: #fff;
+}

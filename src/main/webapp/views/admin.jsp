@@ -35,7 +35,8 @@
 			</div>
 			<div class="filter__admin">
 				<div class="filter__btn">
-					<a href="<c:url value='/edit'/>"> Thêm sản phẩm</a>
+					<a class="filter__btn-name" href="<c:url value='/add'/>"> Thêm
+						sản phẩm</a>
 				</div>
 			</div>
 		</div>
@@ -82,18 +83,25 @@
 				<table style="width: 100%">
 					<tr>
 						<th>Tên sản phẩm</th>
-						<th>Giá</th>
-						<th>Trạng thái</th>
+						<th class="price">Giá (Vnd)</th>
+						<th class="price">Trạng thái (Số lượng)</th>
 						<th class="thao__tacf">Sữa</th>
 						<th class="thao__tacd">Xóa</th>
 					</tr>
 					<c:forEach var="item" items="${ProductModel}">
 						<tr>
 							<td>${item.shortDescription}</td>
-							<td>${item.price}</td>
-							<td>${item.status}</td>
-							<th class="thao__tacf"><a class="thao__tacf"
-								href="<c:url value='/edit'/>">✎</a></th>
+							<td class="price">${item.price}</td>
+							<td class="price">${item.status}</td>
+							<th class="thao__tacf">
+								<form action="<c:url value='/admin'/>" method="post">
+									<a class="thao__tacf" href="<c:url value='/edit'/>"><input
+										type="hidden" name="edit" value="${item.id}"> <input
+										type="hidden" name="type" value="edit"> <input
+										type="submit" value="✎ ">
+									</a>
+								</form>
+							</th>
 							<th class="thao__tacd">
 								<form action="<c:url value='/admin'/>" method="post">
 									<input type="hidden" name="delete" value="${item.id}">
