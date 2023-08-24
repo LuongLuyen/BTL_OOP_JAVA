@@ -22,4 +22,9 @@ public class ProductService implements IProductService {
 		productDao.delete(id);
 	}
 
+	@Override
+	public List<ProductModel> findCategory(String category) {
+		return productDao.findCategory(category);
+	}
+
 }

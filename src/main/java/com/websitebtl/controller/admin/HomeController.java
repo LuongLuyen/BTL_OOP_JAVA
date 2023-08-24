@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.websitebtl.model.ProductModel;
 import com.websitebtl.service.IProductService;
-import com.websitebtl.utils.FormUtil;
 
 @WebServlet(urlPatterns = { "/admin" })
 public class HomeController extends HttpServlet {
@@ -30,9 +28,19 @@ public class HomeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String idString = request.getParameter("idString");
-		long id = Long.parseLong(idString);
-	    ProductService.delete(id);
-	    response.sendRedirect(request.getContextPath()+"/admin");
+		String type = request.getParameter("type");
+		if (type.equals("category")) {
+			String category = request.getParameter("category");
+			request.setAttribute("ProductModel", ProductService.findCategory(category));
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
+			rd.forward(request, response);
+		}else if(type.equals("delete")) {
+			String idString = request.getParameter("delete");
+			long id = Long.parseLong(idString);
+		    ProductService.delete(id);
+			request.setAttribute("ProductModel", ProductService.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
+			rd.forward(request, response);
+		}
 	}
 }
