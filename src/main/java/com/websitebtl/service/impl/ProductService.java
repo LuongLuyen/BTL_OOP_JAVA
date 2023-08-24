@@ -18,4 +18,8 @@ public class ProductService implements IProductService {
 		return productDao.findAll();
 	}
 
+	public void delete(long id) {
+		productDao.delete(id);
+	}
+
 }

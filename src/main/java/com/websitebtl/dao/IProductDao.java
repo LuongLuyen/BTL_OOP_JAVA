@@ -6,4 +6,5 @@ import com.websitebtl.model.ProductModel;
 
 public interface IProductDao extends GenericDao{
 	List<ProductModel> findAll();
+	void delete(long id);
 }

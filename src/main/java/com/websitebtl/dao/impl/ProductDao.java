@@ -14,4 +14,10 @@ public class ProductDao extends AbstractDao implements IProductDao {
 		return query(sql, new ProductMapper());
 	}
 
+	@Override
+	public void delete(long id) {
+		String sql = "DELETE FROM product WHERE id = ?";
+		update(sql, id);
+	}
+
 }

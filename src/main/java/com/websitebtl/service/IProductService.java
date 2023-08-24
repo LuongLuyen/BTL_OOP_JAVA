@@ -6,4 +6,5 @@ import com.websitebtl.model.ProductModel;
 
 public interface IProductService {
 	List<ProductModel> findAll();
+	void delete(long id);
 }
