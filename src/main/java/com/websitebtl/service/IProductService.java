@@ -9,4 +9,5 @@ public interface IProductService {
 	void delete(long id);
 	List<ProductModel> findCategory(String category);
 	List<ProductModel> findById(Long id);
+	ProductModel save(ProductModel productModel);
 }

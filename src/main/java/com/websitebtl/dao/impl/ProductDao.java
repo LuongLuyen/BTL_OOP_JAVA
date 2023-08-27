@@ -32,4 +32,16 @@ public class ProductDao extends AbstractDao implements IProductDao {
 		return query(sql, new ProductMapper(),id);
 	}
 
+	@Override
+	public Long save(ProductModel productModel) {
+		String sql = "INSERT INTO product (userId,shortDescription,status,category,price) VALUES (?,?,?,?,?)";
+		return insert(sql, productModel.getUserId(),productModel.getShortDescription(),productModel.getStatus(), productModel.getCategory(),productModel.getPrice());
+	}
+
+	@Override
+	public ProductModel findOne(Long id) {
+		String sql = "SELECT * FROM product WHERE id = ?";
+		List<ProductModel> product = query(sql, new ProductMapper(), id);
+		return product.isEmpty() ? null : product.get(0);
+	}
 }

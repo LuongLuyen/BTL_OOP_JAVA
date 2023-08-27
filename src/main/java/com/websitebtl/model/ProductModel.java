@@ -2,7 +2,6 @@ package com.websitebtl.model;
 
 public class ProductModel extends AbstractModel {
 	private Long userId;
-	private String thumbnai;
 	private String shortDescription;
 	private String status;
 	private String category;
@@ -12,12 +11,6 @@ public class ProductModel extends AbstractModel {
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
-	}
-	public String getThumbnai() {
-		return thumbnai;
-	}
-	public void setThumbnai(String thumbnai) {
-		this.thumbnai = thumbnai;
 	}
 	public String getShortDescription() {
 		return shortDescription;

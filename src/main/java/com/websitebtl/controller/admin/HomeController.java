@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.websitebtl.model.ProductModel;
 import com.websitebtl.service.IProductService;
+import com.websitebtl.utils.FormUtil;
 
 @WebServlet(urlPatterns = { "/admin" })
 public class HomeController extends HttpServlet {
@@ -28,6 +30,7 @@ public class HomeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
 		if (type.equals("category")) {
 			String category = request.getParameter("category");
@@ -46,6 +49,13 @@ public class HomeController extends HttpServlet {
 			long id = Long.parseLong(idProduct);
 			request.setAttribute("ProductModel", ProductService.findById(id));
 			RequestDispatcher rd = request.getRequestDispatcher("/views/edit.jsp");
+			rd.forward(request, response);
+		}else if(type.equals("add")) {
+			ProductModel model = FormUtil.toModel(ProductModel.class, request);
+			model.setUserId(1L);
+			model = ProductService.save(model);
+			request.setAttribute("ProductModel", ProductService.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
 			rd.forward(request, response);
 		}
 	}

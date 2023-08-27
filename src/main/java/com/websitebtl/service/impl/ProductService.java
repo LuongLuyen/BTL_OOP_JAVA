@@ -32,4 +32,10 @@ public class ProductService implements IProductService {
 		return productDao.findById(id);
 	}
 
+	@Override
+	public ProductModel save(ProductModel productModel) {
+		Long productId = productDao.save(productModel);
+		return productDao.findOne(productId);
+	}
+
 }

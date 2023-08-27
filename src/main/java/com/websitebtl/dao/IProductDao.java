@@ -9,4 +9,6 @@ public interface IProductDao extends GenericDao{
 	void delete(long id);
 	List<ProductModel> findCategory(String category);
 	List<ProductModel> findById(Long id);
+	Long save(ProductModel productModel);
+	ProductModel findOne(Long id);
 }
