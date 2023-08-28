@@ -57,6 +57,19 @@ public class HomeController extends HttpServlet {
 			request.setAttribute("ProductModel", ProductService.findAll());
 			RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
 			rd.forward(request, response);
+		}else if(type.equals("sort")) {
+			String sort = request.getParameter("sortSC");
+			String limitStr = request.getParameter("newProduct");
+			if(limitStr != null) {
+				long limit = Long.parseLong(limitStr);
+				request.setAttribute("ProductModel", ProductService.orderById(sort, limit));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
+				rd.forward(request, response);
+			}else {
+				request.setAttribute("ProductModel", ProductService.orderById(sort, null));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
+				rd.forward(request, response);
+			}	
 		}
 	}
 }

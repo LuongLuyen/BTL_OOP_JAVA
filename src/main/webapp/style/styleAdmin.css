@@ -34,7 +34,7 @@ body {
 
 .filter__input {
 	width: 200px;
-    height: 20px;
+    height: 25px;
     border-radius: 10px;
 }
 .filter__btn {
@@ -47,6 +47,8 @@ body {
 }
 .search {
     color: rgb(69, 242, 6);
+    border-radius: 100px;
+    height: 30px;
 }
 .filter__btn:hover {
     background-color: rgb(69, 242, 6);

@@ -38,4 +38,8 @@ public class ProductService implements IProductService {
 		return productDao.findOne(productId);
 	}
 
+	@Override
+	public List<ProductModel> orderById(String sort, Long limit) {
+		return productDao.orderById(sort, limit);
+	}
 }

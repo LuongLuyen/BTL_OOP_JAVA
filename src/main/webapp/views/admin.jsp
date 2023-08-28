@@ -20,19 +20,32 @@
 			<div class="filter__admin">
 				<div class="filter__btn">Xắp xếp theo:</div>
 			</div>
-			<div class="filter__admin">
-				<div class="filter__btn">Mới nhất</div>
-			</div>
-			<div class="filter__admin">
-				Giá: <select class="filter__input">
-					<option>Cao đến thấp</option>
-					<option>Thấp đến cao</option>
-				</select>
-			</div>
-			<div class="filter__admin">
-				<input class="filter__input" placeholder="Tìm kiếm" /> <span
-					class="search">Filter</span>
-			</div>
+			<form action="<c:url value='/admin'/>" method="post">
+				<div class="filter__admin">
+					<div class="filter__btn">
+					    <input type="hidden" name="newProduct" value="5">
+					    <input type="hidden" name="sortSC" value="DESC">
+						<input type="hidden" name="type" value="sort"> 
+						<input class="admin-input" type="submit" value="Mới nhất">
+					</div>
+				</div>
+			</form>
+			<form action="<c:url value='/admin'/>" method="post">
+				<div class="filter__admin">
+					Giá: <select name="sortSC" class="filter__input">
+						<option value="DESC">Cao đến thấp</option>
+						<option value="ASC">Thấp đến cao</option>
+					</select> <input type="hidden" name="type" value="sort"> <input
+					class="admin-input"	type="submit" value="Lọc">
+				</div>
+			</form>
+			<form action="" method="post">
+				<div class="filter__admin">
+					<input class="filter__input" placeholder="Tìm kiếm" />
+					<input type="hidden" name="type" value="sort"> 
+					<input class="search" type="submit" value="🔍">
+				</div>
+			</form>
 			<div class="filter__admin">
 				<div class="filter__btn">
 					<a class="filter__btn-name" href="<c:url value='/add'/>"> Thêm
@@ -98,8 +111,7 @@
 									<a class="thao__tacf" href="<c:url value='/edit'/>"><input
 										type="hidden" name="edit" value="${item.id}"> <input
 										type="hidden" name="type" value="edit"> <input
-										type="submit" value="✎ ">
-									</a>
+										type="submit" value="✎ "> </a>
 								</form>
 							</th>
 							<th class="thao__tacd">
