@@ -23,7 +23,7 @@
 			<form action="<c:url value='/admin'/>" method="post">
 				<div class="filter__admin">
 					<div class="filter__btn">
-					    <input type="hidden" name="newProduct" value="5">
+					    <input type="hidden" name="newProduct" value="4">
 					    <input type="hidden" name="sortSC" value="DESC">
 						<input type="hidden" name="type" value="sort"> 
 						<input class="admin-input" type="submit" value="Mới nhất">
