@@ -11,4 +11,5 @@ public interface IProductService {
 	List<ProductModel> findById(Long id);
 	ProductModel save(ProductModel productModel);
 	List<ProductModel> orderById(String sort, Long limit);
+	ProductModel update(ProductModel productModel);
 }

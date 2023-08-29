@@ -61,4 +61,14 @@ public class ProductDao extends AbstractDao implements IProductDao {
 		}
 		return query(sql.toString(), new ProductMapper());
 	}
+
+	@Override
+	public void update(ProductModel productModel) {
+		StringBuilder sql = new StringBuilder("UPDATE product SET userId = ?, shortDescription = ?,");
+		sql.append(" status = ?, category = ?, price = ?");
+		sql.append(" WHERE id = ?");
+		update(sql.toString(), productModel.getUserId(), productModel.getShortDescription(), productModel.getStatus(),
+				productModel.getCategory(), productModel.getPrice(), productModel.getId());
+		
+	}
 }

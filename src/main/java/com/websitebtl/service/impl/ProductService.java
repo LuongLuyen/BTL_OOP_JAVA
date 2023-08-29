@@ -42,4 +42,10 @@ public class ProductService implements IProductService {
 	public List<ProductModel> orderById(String sort, Long limit) {
 		return productDao.orderById(sort, limit);
 	}
+
+	@Override
+	public ProductModel update(ProductModel productModel) {
+		productDao.update(productModel);
+		return productDao.findOne(productModel.getId());
+	}
 }

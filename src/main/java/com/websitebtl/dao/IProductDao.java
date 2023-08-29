@@ -12,4 +12,5 @@ public interface IProductDao extends GenericDao{
 	Long save(ProductModel productModel);
 	ProductModel findOne(Long id);
 	List<ProductModel> orderById(String sort, Long limit);
+	void update(ProductModel productModel);
 }
