@@ -17,18 +17,80 @@ body {
 .web__header {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	height: 50px;
 	background-color: #111111;
+	height: 50px;
 }
-.web__nav{
-	width: 20%;
+
+.web__nav {
+	width: 15%;
 	background-color: #111111;
 	height: 90vh;
 	margin: 10px;
+	padding-left: 50px;
+	border-radius: 10px;
 }
+
+.web__category {
+	margin: 10px;
+	font-size: 1.2rem;
+}
+
 .web__content {
 	width: 70%;
 	background-color: #111111;
 	height: 90vh;
 	margin: 10px;
+	border-radius: 10px;
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+.web__logo {
+	width: 2%;
+}
+
+.web__search {
+	width: 50%;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.web__search-input {
+	height: 30px;
+	width: 400px;
+	border-radius: 100px;
+	position: relative;
+	padding-left: 20px;
+}
+
+.search-btn {
+	left: 46%;
+	font-size: 1.5rem;
+	position: absolute;
+	font-size: 1.5rem;
+}
+
+.web__swiper {
+	background-color: #191919;
+	margin: 10px;
+	height: 200px;
+}
+.web__product {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.web__product-item {
+	background-color: #191919;
+	margin: 10px;
+	width: 336px;
+	height: 300px;
+}
+
+.web__user {
+	width: 10%;
 }
