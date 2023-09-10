@@ -45,8 +45,9 @@ body {
 	border-radius: 10px;
 	overflow-y: scroll;
 }
+
 ::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 .web__logo {
@@ -75,22 +76,54 @@ body {
 }
 
 .web__swiper {
-	background-color: #191919;
 	margin: 10px;
-	height: 200px;
+	height: 250px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	display: flex;
+	gap: 4px;
 }
+
+.web__swiper-item {
+	background-color: #191919;
+	width: 150px;
+	height: 95%;
+	margin: 0 5px 0 5px;
+	flex: 1;
+	transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 2);
+}
+
+.web__swiper-item:hover {
+	flex: 4;
+	transform: scaleY(1.12);
+}
+.web__swiper-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .web__product {
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 }
+
 .web__product-item {
 	background-color: #191919;
 	margin: 10px;
 	width: 336px;
 	height: 300px;
+	border-radius: 10px;
 }
 
 .web__user {
 	width: 10%;
+}
+
+.vach {
+	background-color: #191919;
+	color: #191919;
+	height: 10px;
 }

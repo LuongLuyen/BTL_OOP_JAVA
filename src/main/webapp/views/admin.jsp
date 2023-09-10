@@ -40,13 +40,6 @@
 				</div>
 			</form>
 			
-			<form action="" method="post">
-				<div class="filter__admin">
-					<input class="filter__input" placeholder="Tìm kiếm" />
-					<input type="hidden" name="type" value="sort"> 
-					<input class="search" type="submit" value="🔍">
-				</div>
-			</form>
 			<div class="filter__admin">
 				<div class="filter__btn">
 					<a class="filter__btn-name" href="<c:url value='/add'/>"> Thêm
