@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+.login__app {
+    color: #fff;
+    background-color: #191919;
+    width: 100vw;
+    height: 100vh;
+}
+.login__navi {
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+}
+.login__form {
+	margin-top: 30vh;
+    display: flex;
+    justify-content: center;
+}
+.title {
+	display: flex;
+    justify-content: center;
+}
+.login__login {
+    width: 300px;
+    margin: 20px 0 20px 0;
+    height: 30px;
+}
+.form__wrap {
+	border: solid 2px #191919;
+    border-radius: 10px;
+    background-color: #111111;
+    width: 400px;
+    height: 300px;
+}
+.form {
+	margin-left: 45px;
+    margin-top: 30px;
+}
+.login__btn {
+    width: 100px;
+    margin-left: 30%;
+    height: 30px;
+}

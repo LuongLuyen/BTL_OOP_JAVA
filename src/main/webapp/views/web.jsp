@@ -11,23 +11,10 @@
 </head>
 <body>
 	<div class="web__app">
-		<div class="title">
-			<a class="web__navi" href="<c:url value='/admin'/>"> Trang quản
-				trị </a>
-		</div>
-		<div class="web__form">
-			<div class="form__wrap">
-				<form class="form"  action="">
-					<label for="fname">UserName:</label><br> <input
-						class="web__login" type="text" id="fname" name="fname"
-						value="UserName"><br> <label for="lname">Password:</label><br>
-					<input class="web__login" type="text" id="lname" name="lname"
-						value="Password"><br>
-					<br>
-					<button class="login__btn" type="submit">Login</button>
-				</form>
-			</div>
-
+		<div class="web__header">Header</div>
+		<div class="web__main">
+			<div class="web__nav">nav</div>
+			<div class="web__content">content</div>
 		</div>
 	</div>
 </body>

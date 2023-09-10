@@ -29,6 +29,7 @@ public class HomeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		ProductModel model = FormUtil.toModel(ProductModel.class, request);
 		model.setUserId(1L);
 		ProductService.update(model);

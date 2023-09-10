@@ -12,7 +12,7 @@
 <body>
 	<div class="edit__app">
 		<div>
-			<div class="edit__title">Edit Product</div>
+			<div class="edit__title">Thêm sản phẩm</div>
 			<form action="<c:url value='/admin'/>" method="post" accept-charset="UTF-8">
 					<table class="edit__table">
 						<tr>
@@ -37,14 +37,14 @@
 								name="price" ></td>
 						</tr>
 						<tr>
-							<th class="edit__name">Trạng thái</th>
+							<th class="edit__name">Số lượng</th>
 							<td><input class="edit__input" type="text" id="status"
 								name="status"></td>
 						</tr>
 					</table>
 				<div class="edit__submit">
 				    <input type="hidden" name="type" value="add">
-					<input class="edit__submit" type="submit" value="Submit">
+					<input class="edit__submit" type="submit" value="Thêm">
 				</div>
 			</form>
 		</div>

@@ -1,44 +1,34 @@
 body {
-    margin: 0;
+	margin: 0;
 }
+
 .web__app {
-    color: #fff;
-    background-color: #191919;
-    width: 100vw;
-    height: 100vh;
+	color: #fff;
+	background-color: #191919;
+	width: 100vw;
+	height: 100vh;
 }
-.web__navi {
-    text-decoration: none;
-    font-size: 2rem;
-    color: #fff;
-}
-.web__form {
-	margin-top: 30vh;
-    display: flex;
-    justify-content: center;
-}
-.title {
+
+.web__main {
 	display: flex;
-    justify-content: center;
+	justify-content: center;
 }
-.web__login {
-    width: 300px;
-    margin: 20px 0 20px 0;
-    height: 30px;
+
+.web__header {
+	display: flex;
+	justify-content: center;
+	height: 50px;
+	background-color: #111111;
 }
-.form__wrap {
-	border: solid 2px #191919;
-    border-radius: 10px;
-    background-color: #111111;
-    width: 400px;
-    height: 300px;
+.web__nav{
+	width: 20%;
+	background-color: #111111;
+	height: 90vh;
+	margin: 10px;
 }
-.form {
-	margin-left: 45px;
-    margin-top: 30px;
-}
-.login__btn {
-    width: 100px;
-    margin-left: 30%;
-    height: 30px;
+.web__content {
+	width: 70%;
+	background-color: #111111;
+	height: 90vh;
+	margin: 10px;
 }
