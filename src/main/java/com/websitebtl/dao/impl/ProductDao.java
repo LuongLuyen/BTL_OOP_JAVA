@@ -34,9 +34,9 @@ public class ProductDao extends AbstractDao implements IProductDao {
 
 	@Override
 	public Long save(ProductModel productModel) {
-		String sql = "INSERT INTO product (userId,shortDescription,status,category,price) VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO product (userId,shortDescription,status,category,price,thumbnail) VALUES (?,?,?,?,?,?)";
 		return insert(sql, productModel.getUserId(), productModel.getShortDescription(), productModel.getStatus(),
-				productModel.getCategory(), productModel.getPrice());
+				productModel.getCategory(), productModel.getPrice(), productModel.getThumbnail());
 	}
 
 	@Override
@@ -65,10 +65,10 @@ public class ProductDao extends AbstractDao implements IProductDao {
 	@Override
 	public void update(ProductModel productModel) {
 		StringBuilder sql = new StringBuilder("UPDATE product SET userId = ?, shortDescription = ?,");
-		sql.append(" status = ?, category = ?, price = ?");
+		sql.append(" status = ?, category = ?, price = ?, thumbnail =?");
 		sql.append(" WHERE id = ?");
 		update(sql.toString(), productModel.getUserId(), productModel.getShortDescription(), productModel.getStatus(),
-				productModel.getCategory(), productModel.getPrice(), productModel.getId());
+				productModel.getCategory(), productModel.getPrice(), productModel.getThumbnail(), productModel.getId());
 		
 	}
 }

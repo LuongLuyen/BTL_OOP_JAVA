@@ -24,11 +24,12 @@
 							<th class="edit__name">Thể loại</th>
 							<td><select name="category" class="edit__input">
 									<option value=""></option>
-									<option value="ao-nam">Quần áo nam</option>
-									<option value="ti-ci">Tivi</option>
-									<option value="dien-thoai">Điện thoại</option>
-									<option value="lap-top">Laptop</option>
-									<option value="tai-nghe">Tai nghe</option>
+									<option value="ao-so-mi">Áo sơ mi</option>
+									<option value="ao-thun">Áo thun</option>
+									<option value="ao-polo">Áo polo</option>
+									<option value="ao-khoac">Áo khoác</option>
+									<option value="quan-dui">Quần đùi</option>
+									<option value="quan-dai">Quần dài</option>
 							</select></td>
 						</tr>
 						<tr>
@@ -40,6 +41,11 @@
 							<th class="edit__name">Số lượng</th>
 							<td><input class="edit__input" type="text" id="status"
 								name="status"></td>
+						</tr>
+						<tr>
+							<th class="edit__name">Thumbnail</th>
+							<td><input class="edit__input" type="text" id="thumbnail"
+								name="thumbnail"></td>
 						</tr>
 					</table>
 				<div class="edit__submit">

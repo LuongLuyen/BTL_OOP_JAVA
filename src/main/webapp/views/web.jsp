@@ -28,7 +28,7 @@
 				<div class="web__category">Áo sơ mi</div>
 				<div class="web__category">Áo polo</div>
 				<div class="web__category">Áo khoác</div>
-				<div class="web__category">Hoodie & áo nỉ</div>
+				<div class="web__category">Hoodie | áo nỉ</div>
 				<div class="web__category">Quần đùi</div>
 				<div class="web__category">Quần dài</div>
 			</div>

@@ -19,18 +19,20 @@
 					<table class="edit__table">
 						<tr>
 							<th class="edit__name">Tên sản phẩm</th>
-							<td><input class="edit__input" type="text" id="shortDescription"
-								name="shortDescription" value="${item.shortDescription}"></td>
+							<td><input class="edit__input" type="text"
+								id="shortDescription" name="shortDescription"
+								value="${item.shortDescription}"></td>
 						</tr>
 						<tr>
 							<th class="edit__name">Thể loại</th>
 							<td><select name="category" class="edit__input">
 									<option value="${item.category}">${item.category}</option>
-									<option value="ao-nam">Quần áo nam</option>
-									<option value="ti-ci">Tivi</option>
-									<option value="dien-thoai">Điện thoại</option>
-									<option value="lap-top">Laptop</option>
-									<option value="tai-nghe">Tai nghe</option>
+									<option value="ao-so-mi">Áo sơ mi</option>
+									<option value="ao-thun">Áo thun</option>
+									<option value="ao-polo">Áo polo</option>
+									<option value="ao-khoac">Áo khoác</option>
+									<option value="quan-dui">Quần đùi</option>
+									<option value="quan-dai">Quần dài</option>
 							</select></td>
 						</tr>
 						<tr>
@@ -39,9 +41,14 @@
 								name="price" value="${item.price}"></td>
 						</tr>
 						<tr>
-							<th class="edit__name">Trạng thái</th>
+							<th class="edit__name">Số Lượng</th>
 							<td><input class="edit__input" type="text" id="status"
 								name="status" value="${item.status}"></td>
+						</tr>
+						<tr>
+							<th class="edit__name">Thumbnail</th>
+							<td><input class="edit__input" type="text" id="thumbnail"
+								name="thumbnail" value="${item.thumbnail}"></td>
 						</tr>
 					</table>
 					<input type="hidden" id="id" name="id" value="${item.id}">

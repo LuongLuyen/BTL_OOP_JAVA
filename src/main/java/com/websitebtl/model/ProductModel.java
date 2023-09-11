@@ -6,6 +6,7 @@ public class ProductModel extends AbstractModel {
 	private String status;
 	private String category;
 	private String price;
+	private String thumbnail;
 	public Long getUserId() {
 		return userId;
 	}
@@ -35,6 +36,12 @@ public class ProductModel extends AbstractModel {
 	}
 	public void setPrice(String price) {
 		this.price = price;
+	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
 	}
 
 }

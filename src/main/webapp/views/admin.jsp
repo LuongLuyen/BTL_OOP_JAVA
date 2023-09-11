@@ -23,10 +23,10 @@
 			<form action="<c:url value='/admin'/>" method="post">
 				<div class="filter__admin">
 					<div class="filter__btn">
-					    <input type="hidden" name="newProduct" value="4">
-					    <input type="hidden" name="sortSC" value="DESC">
-						<input type="hidden" name="type" value="sort"> 
-						<input class="admin-input" type="submit" value="Mới nhất">
+						<input type="hidden" name="newProduct" value="4"> <input
+							type="hidden" name="sortSC" value="DESC"> <input
+							type="hidden" name="type" value="sort"> <input
+							class="admin-input" type="submit" value="Mới nhất">
 					</div>
 				</div>
 			</form>
@@ -36,10 +36,10 @@
 						<option value="DESC">Cao đến thấp</option>
 						<option value="ASC">Thấp đến cao</option>
 					</select> <input type="hidden" name="type" value="sort"> <input
-					class="admin-input"	type="submit" value="Lọc">
+						class="admin-input" type="submit" value="Lọc">
 				</div>
 			</form>
-			
+
 			<div class="filter__admin">
 				<div class="filter__btn">
 					<a class="filter__btn-name" href="<c:url value='/add'/>"> Thêm
@@ -52,37 +52,44 @@
 				<h1 class="admin__nav-title">Danh mục</h1>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
-						<input type="hidden" name="category" value="ao-nam"> <input
+						<input type="hidden" name="category" value="ao-so-mi"> <input
 							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Quần áo nam">
+							class="admin-input" type="submit" value="Áo sơ mi">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
-						<input type="hidden" name="category" value="ti-vi"> <input
+						<input type="hidden" name="category" value="ao-thun"> <input
 							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Tivi">
+							class="admin-input" type="submit" value="Áo thun">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
-						<input type="hidden" name="category" value="dien-thoai"> <input
+						<input type="hidden" name="category" value="ao-polo"> <input
 							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Điện thoại">
+							class="admin-input" type="submit" value="Áo polo">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
-						<input type="hidden" name="category" value="lap-top"> <input
+						<input type="hidden" name="category" value="ao-khoac"> <input
 							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Laptop">
+							class="admin-input" type="submit" value="Áo Khoác">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
-						<input type="hidden" name="category" value="tai-nghe"> <input
+						<input type="hidden" name="category" value="quan-dui"> <input
 							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Tai nghe">
+							class="admin-input" type="submit" value="Quần đùi">
+					</form>
+				</div>
+				<div class="admin__nav-item">
+					<form action="<c:url value='/admin'/>" method="post">
+						<input type="hidden" name="category" value="quan-dai"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Quần dài">
 					</form>
 				</div>
 			</div>
