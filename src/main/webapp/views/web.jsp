@@ -18,16 +18,19 @@
 					class="search-btn">🔍</span>
 			</div>
 			<div class="web__user">
-				<span>Đăng nhập </span> <span>|</span> <span>Đăng ký</span>
+				<span>Nguyen Van Tuan </span> <span>|</span> <span>Giỏ hàng</span>
 			</div>
 		</div>
 		<div class="web__main">
 			<div class="web__nav">
-				<h1>Category</h1>
-				<div class="web__category">San pham</div>
-				<div class="web__category">San pham</div>
-				<div class="web__category">San pham</div>
-				<div class="web__category">San pham</div>
+				<h1 class="web__category-title">Danh mục</h1>
+				<div class="web__category">Áo thun</div>
+				<div class="web__category">Áo sơ mi</div>
+				<div class="web__category">Áo polo</div>
+				<div class="web__category">Áo khoác</div>
+				<div class="web__category">Hoodie & áo nỉ</div>
+				<div class="web__category">Quần đùi</div>
+				<div class="web__category">Quần dài</div>
 			</div>
 			<div class="web__content">
 				<div class="web__swiper">
@@ -57,11 +60,131 @@
 					</div>
 				</div>
 				<div class="vach">""</div>
+				<div class="web__filter">
+					<div class="filter__admin">
+						<div class="filter__btn">Xắp xếp theo:</div>
+					</div>
+					<form action="<c:url value='/admin'/>" method="post">
+						<div class="filter__admin">
+							<div class="filter__btn">
+								<input type="hidden" name="newProduct" value="4"> <input
+									type="hidden" name="sortSC" value="DESC"> <input
+									type="hidden" name="type" value="sort"> <input
+									class="admin-input" type="submit" value="Mới nhất">
+							</div>
+						</div>
+					</form>
+					<form action="<c:url value='/admin'/>" method="post">
+						<div class="filter__admin">
+							<div class="filter__btn">
+								<input type="hidden" name="newProduct" value="4"> <input
+									type="hidden" name="sortSC" value="DESC"> <input
+									type="hidden" name="type" value="sort"> <input
+									class="admin-input" type="submit" value="Phổ biến">
+							</div>
+						</div>
+					</form>
+					<form action="<c:url value='/admin'/>" method="post">
+						<div class="filter__admin">
+							<div class="filter__btn">
+								<input type="hidden" name="newProduct" value="4"> <input
+									type="hidden" name="sortSC" value="DESC"> <input
+									type="hidden" name="type" value="sort"> <input
+									class="admin-input" type="submit" value="Bán chạy">
+							</div>
+						</div>
+					</form>
+					<form action="<c:url value='/admin'/>" method="post">
+						<div class="filter__admin">
+							Giá: <select name="sortSC" class="filter__input">
+								<option value="DESC">Cao đến thấp</option>
+								<option value="ASC">Thấp đến cao</option>
+							</select> <input type="hidden" name="type" value="sort"> <input
+								class="admin-input" type="submit" value="Lọc">
+						</div>
+					</form>
+				</div>
 				<div class="web__product">
-					<div class="web__product-item">product</div>
-					<div class="web__product-item">product</div>
-					<div class="web__product-item">product</div>
-					<div class="web__product-item">product</div>
+
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+					<div class="web__product-item">
+						<img class="web__product-img" alt="swiper"
+							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
+						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
+							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
+						<div class="web__product-price">
+							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+						</div>
+						<div class="web__product-btn">
+							<div class="web__product-buy">Mua ngay</div>
+							<div class="web__product-cart">Giỏ hàng</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 		</div>

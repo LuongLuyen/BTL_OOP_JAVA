@@ -49,7 +49,7 @@
 		</div>
 		<div class="admin__content">
 			<div class="admin__nav">
-				<h4 class="admin__nav-item">Danh mục</h4>
+				<h1 class="admin__nav-title">Danh mục</h1>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/admin'/>" method="post">
 						<input type="hidden" name="category" value="ao-nam"> <input

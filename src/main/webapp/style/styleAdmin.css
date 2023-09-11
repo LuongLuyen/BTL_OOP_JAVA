@@ -1,121 +1,147 @@
 body {
-  margin: 0;
+	margin: 0;
 }
 
 .admin__app {
-  background-color: #111111;
-  color: #fff;
-  width: 100vw;
-  height: 100vh;
+	background-color: #111111;
+	color: #fff;
+	width: 100vw;
+	height: 100vh;
 }
+
 .admin__title {
-  padding-top: 20px;
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-   border: none;
-  background: none;
-  color: #fff;
+	padding-top: 20px;
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+	border: none;
+	background: none;
+	color: #fff;
 }
+
 .admin__filter {
-  margin-left: 2.5%;
-  margin-top: 50px;
-  width: 95%;
-  display: flex;
-  justify-content: center;
-  background-color: #191919;
-  height: 50px;
-  border-radius: 10px;
+	margin-left: 2.5%;
+	margin-top: 50px;
+	width: 95%;
+	display: flex;
+	justify-content: center;
+	background-color: #191919;
+	height: 50px;
+	border-radius: 10px;
 }
+
 .filter__admin {
-   margin: 10px;
-   font-size: 1.3rem;
+	margin: 10px;
+	font-size: 1.3rem;
 }
 
 .filter__input {
 	width: 200px;
-    height: 25px;
-    border-radius: 10px;
+	height: 25px;
+	border-radius: 10px;
 }
+
 .filter__btn {
-    background-color: orange;
-    color: #333;
-    width: 150px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
+	background-color: orange;
+	color: #333;
+	width: 150px;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
 }
+
 .search {
-    color: rgb(69, 242, 6);
-    border-radius: 100px;
-    height: 30px;
+	color: rgb(69, 242, 6);
+	border-radius: 100px;
+	height: 30px;
 }
+
 .filter__btn:hover {
-    background-color: rgb(69, 242, 6);
+	background-color: rgb(69, 242, 6);
 }
-.admin__nav-item:hover{
-    background-color: rgb(69, 242, 6);
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    padding-left: 20px;
-    color: #333;
+
+.admin__nav-item:hover {
+	background-color: rgb(69, 242, 6);
+	border-top-left-radius: 100px;
+	border-bottom-left-radius: 100px;
+	padding-left: 20px;
+	color: #333;
 }
 
 .admin__content {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
+
 .admin__nav {
-  width: 15%;
-  background-color: #191919;
-  margin-top: 10px;
-  margin-right: 5px;
-  height: 500px;
-  border-radius: 10px;
+	width: 15%;
+	background-color: #191919;
+	margin-top: 10px;
+	margin-right: 5px;
+	height: 500px;
+	border-radius: 10px;
 }
+
 .admin__main {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-  background-color: #191919;
-  margin-top: 10px;
-  border-radius: 10px;
-  padding: 20px;
-  height: 460px;
-  overflow-y: scroll;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	background-color: #191919;
+	margin-top: 10px;
+	border-radius: 10px;
+	padding: 20px;
+	height: 460px;
+	overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+	display: none;
+}
+
 .admin__nav-item {
-  margin-left: 20%;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+	margin-left: 20%;
+	font-size: 1.2rem;
+	margin-bottom: 20px;
+}
+
+.admin__nav-title {
+	margin-left: 20%;
+	font-size: 2rem;
+	margin-bottom: 20px;
 }
 
 table, th, td {
-  border:1px solid #fff;
-  height: 50px;
-  width: 100px;
+	border: 1px solid #fff;
+	height: 50px;
+	width: 100px;
 }
+
 .thao__tacf {
-  width: 10px;
-   color: rgb(69, 242, 6);
+	width: 10px;
+	color: rgb(69, 242, 6);
 }
+
 .thao__tacd {
-  width: 10px;
-   color: red;
+	width: 10px;
+	color: red;
 }
+
 .admin_navi {
 	color: #fff;
 }
+
 .admin-input {
-  border: none;
-  background: none;
-  font-size: 1.2rem;
-  color: #fff;
+	border: none;
+	background: none;
+	font-size: 1.2rem;
+	color: #fff;
 }
-.price{
-  width: 20px;
+
+.price {
+	width: 20px;
 }
+
 .filter__btn-name {
 	text-decoration: none;
-    color: #fff;
+	color: #fff;
 }

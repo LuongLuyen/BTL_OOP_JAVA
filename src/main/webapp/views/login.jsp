@@ -12,15 +12,14 @@
 <body>
 	<div class="login__app">
 		<div class="title">
-			<a class="login__navi" href="<c:url value='/admin'/>"> Trang quản
-				trị </a>
+			<a class="login__navi" href="<c:url value='/admin'/>">Đăng nhập </a>
 		</div>
 		<div class="login__form">
 			<div class="form__wrap">
 				<form class="form"  action="">
-					<label for="fname">UserName:</label><br> <input
+					<label for="fname">Tài khoản:</label><br> <input
 						class="login__login" type="text" id="fname" name="fname"
-						value="UserName"><br> <label for="lname">Password:</label><br>
+						value="UserName"><br> <label for="lname">Mật khẩu:</label><br>
 					<input class="login__login" type="text" id="lname" name="lname"
 						value="Password"><br>
 					<br>
