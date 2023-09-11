@@ -12,7 +12,12 @@
 <body>
 	<div class="web__app">
 		<div class="web__header">
-			<div class="web__logo">Logo</div>
+			<div class="web__logo">
+				<form action="<c:url value='/home'/>" method="get">
+					<input class="none" type="submit" value="Logo">
+				</form>
+			</div>
+
 			<div class="web__search">
 				<input placeholder="Tìm kiếm" class="web__search-input" /> <span
 					class="search-btn">🔍</span>
@@ -24,13 +29,48 @@
 		<div class="web__main">
 			<div class="web__nav">
 				<h1 class="web__category-title">Danh mục</h1>
-				<div class="web__category">Áo thun</div>
-				<div class="web__category">Áo sơ mi</div>
-				<div class="web__category">Áo polo</div>
-				<div class="web__category">Áo khoác</div>
-				<div class="web__category">Hoodie | áo nỉ</div>
-				<div class="web__category">Quần đùi</div>
-				<div class="web__category">Quần dài</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="ao-so-mi"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Áo sơ mi">
+					</form>
+				</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="ao-thun"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Áo thun">
+					</form>
+				</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="ao-polo"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Áo polo">
+					</form>
+				</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="ao-khoac"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Áo Khoác">
+					</form>
+				</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="quan-dui"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Quần đùi">
+					</form>
+				</div>
+				<div class="web__category">
+					<form action="<c:url value='/home'/>" method="post">
+						<input type="hidden" name="category" value="quan-dai"> <input
+							type="hidden" name="type" value="category"> <input
+							class="admin-input" type="submit" value="Quần dài">
+					</form>
+				</div>
 			</div>
 			<div class="web__content">
 				<div class="web__swiper">
@@ -64,7 +104,7 @@
 					<div class="filter__admin">
 						<div class="filter__btn">Xắp xếp theo:</div>
 					</div>
-					<form action="<c:url value='/admin'/>" method="post">
+					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							<div class="filter__btn">
 								<input type="hidden" name="newProduct" value="4"> <input
@@ -74,7 +114,7 @@
 							</div>
 						</div>
 					</form>
-					<form action="<c:url value='/admin'/>" method="post">
+					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							<div class="filter__btn">
 								<input type="hidden" name="newProduct" value="4"> <input
@@ -84,7 +124,7 @@
 							</div>
 						</div>
 					</form>
-					<form action="<c:url value='/admin'/>" method="post">
+					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							<div class="filter__btn">
 								<input type="hidden" name="newProduct" value="4"> <input
@@ -94,7 +134,7 @@
 							</div>
 						</div>
 					</form>
-					<form action="<c:url value='/admin'/>" method="post">
+					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							Giá: <select name="sortSC" class="filter__input">
 								<option value="DESC">Cao đến thấp</option>
@@ -105,86 +145,20 @@
 					</form>
 				</div>
 				<div class="web__product">
-
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
+					<c:forEach var="item" items="${ProductModel}">
+						<div class="web__product-item">
+							<img class="web__product-img" alt="swiper"
+								src="${item.thumbnail }"> <span class="web__product-name">${item.shortDescription }</span>
+							<div class="web__product-price">
+								<span> đ ${item.price } </span> <span>Đã bán:
+									${item.status } </span>
+							</div>
+							<div class="web__product-btn">
+								<div class="web__product-buy">Mua ngay</div>
+								<div class="web__product-cart">Giỏ hàng</div>
+							</div>
 						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
-						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
-						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
-						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
-						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-					<div class="web__product-item">
-						<img class="web__product-img" alt="swiper"
-							src="https://down-vn.img.susercontent.com/file/eec7269e9df4849518f425c9e90a089a">
-						<span class="web__product-name">Bộ Quần Áo Nam Thể Thao Mùa
-							Hè Phối Layer Thời Trang Vải Tổ Ong Thoáng Mát</span>
-						<div class="web__product-price">
-							<span> đ 199.000 </span> <span>Đã bán: 199 </span>
-						</div>
-						<div class="web__product-btn">
-							<div class="web__product-buy">Mua ngay</div>
-							<div class="web__product-cart">Giỏ hàng</div>
-						</div>
-					</div>
-
+					</c:forEach>
 				</div>
 			</div>
 		</div>
