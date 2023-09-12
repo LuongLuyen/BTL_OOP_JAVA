@@ -1,6 +1,8 @@
 package com.websitebtl.controller.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.websitebtl.model.ProductModel;
 import com.websitebtl.service.IProductService;
 
 @WebServlet(urlPatterns = { "/home" })
@@ -34,18 +37,30 @@ public class HomeController extends HttpServlet {
 		if (type.equals("category")) {
 			String category = request.getParameter("category");
 			request.setAttribute("ProductModel", ProductService.findCategory(category));
-		} 
-		if (type.equals("sort")) {
-				String sort = request.getParameter("sortSC");
-				String limitStr = request.getParameter("newProduct");
-				if (limitStr != null) {
-					long limit = Long.parseLong(limitStr);
-					request.setAttribute("ProductModel", ProductService.orderById(sort, limit));
-				} else {
-					request.setAttribute("ProductModel", ProductService.orderById(sort, null));
+		}
+		if (type.equals("search")) {
+			String search = request.getParameter("search");
+			List<ProductModel> productModel = new ArrayList<>();
+			List<ProductModel> dataSearch = new ArrayList<>();
+	        productModel = ProductService.findAll();
+			for (ProductModel result : productModel) {
+				if (result.getShortDescription().contains(search)) {
+					dataSearch.add(result);
 				}
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
-			rd.forward(request, response);
+			request.setAttribute("ProductModel", dataSearch);
 		}
+		if (type.equals("sort")) {
+			String sort = request.getParameter("sortSC");
+			String limitStr = request.getParameter("newProduct");
+			if (limitStr != null) {
+				long limit = Long.parseLong(limitStr);
+				request.setAttribute("ProductModel", ProductService.orderById(sort, limit));
+			} else {
+				request.setAttribute("ProductModel", ProductService.orderById(sort, null));
+			}
+		}
+		RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
+		rd.forward(request, response);
 	}
+}

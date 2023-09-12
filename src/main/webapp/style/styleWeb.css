@@ -22,6 +22,13 @@ body {
 	background-color: #111111;
 	height: 50px;
 }
+.web__cart {
+	background-color: #00ff00;
+	color: #fff;
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: 10px;
+}
 
 .web__nav {
 	width: 15%;
@@ -81,10 +88,12 @@ body {
 }
 
 .search-btn {
-	left: 46%;
+ 	left: 46%;
 	font-size: 1.5rem;
-	position: absolute;
-	font-size: 1.5rem;
+	position: absolute; 
+	border: none;
+	background: none;
+	color: #fff;
 }
 
 .web__swiper {
