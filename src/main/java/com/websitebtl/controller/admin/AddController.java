@@ -1,4 +1,4 @@
-package com.websitebtl.controller.add;
+package com.websitebtl.controller.admin;
 
 import java.io.IOException;
 
@@ -15,7 +15,7 @@ import com.websitebtl.service.IProductService;
 import com.websitebtl.utils.FormUtil;
 
 @WebServlet(urlPatterns = {"/add"})
-public class HomeController extends HttpServlet {
+public class AddController extends HttpServlet {
 	@Inject
 	private IProductService ProductService;
 	

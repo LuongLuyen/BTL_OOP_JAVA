@@ -33,7 +33,7 @@
 							</select></td>
 						</tr>
 						<tr>
-							<th class="edit__name">Giá</th>
+							<th class="edit__name">Giá (Số)</th>
 							<td><input class="edit__input" type="text" id="price"
 								name="price" ></td>
 						</tr>

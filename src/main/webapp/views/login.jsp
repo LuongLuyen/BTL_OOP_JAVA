@@ -12,7 +12,7 @@
 <body>
 	<div class="login__app">
 		<div class="title">
-			<a class="login__navi" href="<c:url value='/admin'/>">Đăng nhập </a>
+			<a class="login__navi" href="<c:url value='/home'/>">Đăng nhập </a>
 		</div>
 		<div class="login__form">
 			<div class="form__wrap">
