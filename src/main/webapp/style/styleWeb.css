@@ -22,12 +22,17 @@ body {
 	background-color: #111111;
 	height: 50px;
 }
+
 .web__cart {
 	background-color: #00ff00;
 	color: #fff;
 	border-radius: 5px;
 	padding: 5px;
 	margin-left: 10px;
+}
+
+.web__cart-a {
+	text-decoration: none;
 }
 
 .web__nav {
@@ -88,9 +93,9 @@ body {
 }
 
 .search-btn {
- 	left: 46%;
+	left: 46%;
 	font-size: 1.5rem;
-	position: absolute; 
+	position: absolute;
 	border: none;
 	background: none;
 	color: #fff;
@@ -135,7 +140,7 @@ body {
 .web__product-item {
 	background-color: #191919;
 	margin: 10px;
-	width: 237px;
+	width: 235px;
 	height: 420px;
 	border-radius: 10px;
 	border: solid 2px #333;

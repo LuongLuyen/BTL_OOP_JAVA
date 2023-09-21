@@ -67,64 +67,24 @@
 			</div>
 			<div class="cart__main">
 				<div class="cart__main-scroll">
-					<div class="cart__main-item">
-						<img class="cart__main-img" alt="cart"
-							src="https://down-vn.img.susercontent.com/file/710b04970b57bc014e2e79573c993276_tn">
-						<div class="cart__main_content">
-							<h3>Quần đùi nam thể thao quần short hàng xuất cao cấp phong
-								cách trẻ trung năng động T80</h3>
-							<div class="cart__main-price">
-								<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-								<div>đ 199.000</div>
+
+					<c:forEach var="item" items="${ProductModel}">
+						<div class="cart__main-item">
+							<img class="cart__main-img" alt="cart"
+								src="${item.thumbnail }">
+							<div class="cart__main_content">
+								<h3>${item.shortDescription }</h3>
+								<div class="cart__main-price">
+									<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
+									<div>đ ${item.price }</div>
+								</div>
+								<div>7 ngày trả hàng</div>
+								<div>Số lượng: x2</div>
 							</div>
-							<div>7 ngày trả hàng</div>
-							<div>Số lượng: x2</div>
 						</div>
-					</div>
-					<div class="cart__main-item">
-						<img class="cart__main-img" alt="cart"
-							src="https://down-vn.img.susercontent.com/file/710b04970b57bc014e2e79573c993276_tn">
-						<div class="cart__main_content">
-							<h3>Quần đùi nam thể thao quần short hàng xuất cao cấp phong
-								cách trẻ trung năng động T80</h3>
-							<div class="cart__main-price">
-								<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-								<div>đ 199.000</div>
-							</div>
-							<div>7 ngày trả hàng</div>
-							<div>Số lượng: x2</div>
-						</div>
-					</div>
-					<div class="cart__main-item">
-						<img class="cart__main-img" alt="cart"
-							src="https://down-vn.img.susercontent.com/file/710b04970b57bc014e2e79573c993276_tn">
-						<div class="cart__main_content">
-							<h3>Quần đùi nam thể thao quần short hàng xuất cao cấp phong
-								cách trẻ trung năng động T80</h3>
-							<div class="cart__main-price">
-								<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-								<div>đ 199.000</div>
-							</div>
-							<div>7 ngày trả hàng</div>
-							<div>Số lượng: x2</div>
-						</div>
-					</div>
-					<div class="cart__main-item">
-						<img class="cart__main-img" alt="cart"
-							src="https://down-vn.img.susercontent.com/file/710b04970b57bc014e2e79573c993276_tn">
-						<div class="cart__main_content">
-							<h3>Quần đùi nam thể thao quần short hàng xuất cao cấp phong
-								cách trẻ trung năng động T80</h3>
-							<div class="cart__main-price">
-								<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-								<div>đ 199.000</div>
-							</div>
-							<div>7 ngày trả hàng</div>
-							<div>Số lượng: x2</div>
-						</div>
-					</div>
+					</c:forEach>
 					<div class="cart__main-itemk">
-						<h1>hh</h1>
+						<h1 class="cart__main-dem">.</h1>
 					</div>
 				</div>
 				<div class="cart__main-payment">

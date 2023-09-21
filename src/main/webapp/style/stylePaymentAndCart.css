@@ -24,6 +24,7 @@
 	display: flex;
 	border: solid 1px #333;
 	margin-bottom: 10px;
+	border-radius: 10px;
 }
 .cart__main-itemk {
 	width: 99%;
@@ -66,7 +67,8 @@
 }
 
 .cart__main-total {
-	margin-top: 10px; color : red;
+	margin-top: 10px; 
+	color : red;
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: flex-end;
@@ -88,4 +90,7 @@
 	height: 40px;
 	color: #333;
 	border-radius: 5px;
+}
+.cart__main-dem {
+	color: #191919;
 }

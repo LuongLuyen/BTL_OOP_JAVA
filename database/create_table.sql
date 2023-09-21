@@ -37,3 +37,13 @@ CREATE TABLE IF NOT EXISTS product (
   price DOUBLE NOT NULL,
   FOREIGN KEY (userId) REFERENCES users (id)
 );
+CREATE TABLE IF NOT EXISTS payment (
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  userId INT NOT NULL,
+  shortDescription VARCHAR(255) NOT NULL,
+  thumbnail VARCHAR(255) NOT NULL,
+  transport VARCHAR(225) NOT NULL,
+  category VARCHAR(150) NOT NULL,
+  price DOUBLE NOT NULL,
+  FOREIGN KEY (userId) REFERENCES users (id)
+);

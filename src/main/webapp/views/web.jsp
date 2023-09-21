@@ -20,14 +20,18 @@
 
 			<div class="web__search">
 				<form action="<c:url value='/home'/>" method="post">
-					<input placeholder="Tìm kiếm" name="search" class="web__search-input" /> 
-					<input type="hidden" name="type" value="search">
-					<input class="search-btn" type="submit" value="🔍">
+					<input placeholder="Tìm kiếm" name="search"
+						class="web__search-input" /> <input type="hidden" name="type"
+						value="search"> <input class="search-btn" type="submit"
+						value="🔍">
 				</form>
 			</div>
 			<div class="web__user">
-				<span>Nguyen Van Tuan </span> <span>|</span> <span class="web__cart">Giỏ
-					hàng</span>
+				<span>Nguyen Van Tuan </span> <span>|</span> <a class="web__cart-a"
+					href="<c:url value='/payment'/>"> <span class="web__cart">Giỏ
+						hàng</span>
+				</a>
+
 			</div>
 		</div>
 		<div class="web__main">
