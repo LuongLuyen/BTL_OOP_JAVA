@@ -23,44 +23,42 @@
 			<div class="cart__nav">
 				<h1 class="admin__nav-title">Trạng thái</h1>
 				<div class="admin__nav-item">
-					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="ao-so-mi"> <input
-							type="hidden" name="type" value="category"> <input
-							class="admin-input" type="submit" value="Tất cả">
+					<form action="<c:url value='/payment'/>" method="get">
+						<input class="admin-input" type="submit" value="Tất cả">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="ao-thun"> <input
-							type="hidden" name="type" value="category"> <input
+						<input type="hidden" name="transport" value="cho-thanh-toan">
+						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Chờ thanh toán">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="ao-polo"> <input
-							type="hidden" name="type" value="category"> <input
+						<input type="hidden" name="transport" value="van-chuyen">
+						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Vận chuyển">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="ao-khoac"> <input
-							type="hidden" name="type" value="category"> <input
+						<input type="hidden" name="transport" value="dang-giao"> <input
+							type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Đang giao">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="quan-dui"> <input
-							type="hidden" name="type" value="category"> <input
+						<input type="hidden" name="transport" value="hoan-thanh">
+						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Hoàn thành">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="category" value="quan-dai"> <input
-							type="hidden" name="type" value="category"> <input
+						<input type="hidden" name="transport" value="da-huy"> <input
+							type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Đã hủy">
 					</form>
 				</div>
@@ -70,8 +68,7 @@
 
 					<c:forEach var="item" items="${ProductModel}">
 						<div class="cart__main-item">
-							<img class="cart__main-img" alt="cart"
-								src="${item.thumbnail }">
+							<img class="cart__main-img" alt="cart" src="${item.thumbnail }">
 							<div class="cart__main_content">
 								<h3>${item.shortDescription }</h3>
 								<div class="cart__main-price">

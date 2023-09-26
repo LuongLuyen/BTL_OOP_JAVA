@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import com.websitebtl.dao.IPaymentDao;
 import com.websitebtl.model.PaymentModel;
+import com.websitebtl.model.ProductModel;
 import com.websitebtl.service.IPaymentService;
 
 public class PaymentService implements IPaymentService {
@@ -15,5 +16,10 @@ public class PaymentService implements IPaymentService {
 	@Override
 	public List<PaymentModel> findAll() {
 		return paymentDao.findAll();
+	}
+
+	@Override
+	public List<PaymentModel> findCategory(String category) {
+		return paymentDao.findCategory(category);
 	}
 }

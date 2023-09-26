@@ -13,4 +13,10 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 		String sql = "SELECT * FROM payment";
 		return query(sql, new PaymentMapper());
 	}
+
+	@Override
+	public List<PaymentModel> findCategory(String category) {
+		String sql = "SELECT * FROM payment where transport = ?";
+		return query(sql, new PaymentMapper(),category);
+	}
 }
