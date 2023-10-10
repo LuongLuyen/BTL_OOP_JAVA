@@ -1,6 +1,7 @@
 package com.websitebtl.model;
 
-public class UserModel extends AbstractModel {
+public class UserModel {
+	private Long id;
 	private String userName;
 	private String password;
 	private String fullName;
@@ -35,5 +36,11 @@ public class UserModel extends AbstractModel {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

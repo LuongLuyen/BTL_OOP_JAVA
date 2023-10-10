@@ -28,7 +28,7 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public List<ProductModel> findById(Long id) {
+	public ProductModel findById(Long id) {
 		return productDao.findById(id);
 	}
 

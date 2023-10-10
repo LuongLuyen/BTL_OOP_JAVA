@@ -19,4 +19,24 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 		String sql = "SELECT * FROM payment where transport = ?";
 		return query(sql, new PaymentMapper(),category);
 	}
+
+	@Override
+	public List<PaymentModel> findByIdUser(Long id) {
+		String sql = "SELECT * FROM payment where userId = ?";
+		return query(sql, new PaymentMapper(),id);
+	}
+
+	@Override
+	public Long save(PaymentModel paymentModel) {
+		String sql = "INSERT INTO payment (userId,shortDescription,transport,category,price,thumbnail) VALUES (?,?,?,?,?,?)";
+		return insert(sql, paymentModel.getUserId(), paymentModel.getShortDescription(), paymentModel.getTransport(),
+				paymentModel.getCategory(), paymentModel.getPrice(), paymentModel.getThumbnail());
+	}
+
+	@Override
+	public PaymentModel findOne(Long id) {
+		String sql = "SELECT * FROM payment WHERE id = ?";
+		List<PaymentModel> payment = query(sql, new PaymentMapper(), id);
+		return payment.isEmpty() ? null : payment.get(0);
+	}
 }

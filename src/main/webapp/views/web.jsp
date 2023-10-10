@@ -162,8 +162,22 @@
 									${item.status } </span>
 							</div>
 							<div class="web__product-btn">
-								<div class="web__product-buy">Mua ngay</div>
-								<div class="web__product-cart">Giỏ hàng</div>
+								<form action="<c:url value='/home'/>" method="post">
+									<div class="web__product-buy">
+									<input type="hidden" name="buy" value="${item.id}"> 
+									<input type="hidden" name="type" value="buy"> 
+									<input class="none" type="submit" value="Mua ngay">
+									</div>
+								</form>
+								<div class="web__product-cart">
+								<form action="<c:url value='/home'/>" method="post">
+										<div class="web__product-cart">
+											<input type="hidden" name="cart" value="${item.id}">
+											<input type="hidden" name="type" value="cart"> <input
+												class="none" type="submit" value="Giỏ hàng">
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</c:forEach>

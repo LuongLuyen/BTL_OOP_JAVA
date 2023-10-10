@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.websitebtl.model.PaymentModel;
 import com.websitebtl.model.ProductModel;
+import com.websitebtl.service.IPaymentService;
 import com.websitebtl.service.IProductService;
 
 @WebServlet(urlPatterns = { "/home" })
@@ -20,6 +22,8 @@ public class HomeController extends HttpServlet {
 
 	@Inject
 	private IProductService ProductService;
+	@Inject
+	private IPaymentService paymentService;
 
 	private static final long serialVersionUID = -6622126168801261536L;
 
@@ -34,6 +38,33 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
+		if(type.equals("cart")) {
+			String cartID = request.getParameter("cart");
+			Long id = Long.parseLong(cartID);
+			List<PaymentModel> listPaymentModels = new ArrayList<>();
+			ProductModel productModel = new ProductModel();
+			PaymentModel paymentModel = new PaymentModel();
+			productModel = ProductService.findById(id);
+			paymentModel.setUserId(productModel.getUserId());
+			paymentModel.setShortDescription(productModel.getShortDescription());
+			paymentModel.setThumbnail(productModel.getThumbnail());
+			paymentModel.setTransport("all");
+			paymentModel.setCategory(productModel.getCategory());
+			paymentModel.setPrice(productModel.getPrice());
+			listPaymentModels.add(paymentModel);
+			paymentService.save(paymentModel);
+			
+			listPaymentModels = paymentService.findByIdUser(1L);
+			
+			request.setAttribute("ProductModel",listPaymentModels);
+			RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+			rd.forward(request, response);
+		}
+		if(type.equals("buy")) {
+			String buyID = request.getParameter("buy");
+			
+		}
+		
 		if (type.equals("category")) {
 			String category = request.getParameter("category");
 			request.setAttribute("ProductModel", ProductService.findCategory(category));
