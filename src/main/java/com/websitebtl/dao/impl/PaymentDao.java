@@ -10,7 +10,7 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 
 	@Override
 	public List<PaymentModel> findAll() {
-		String sql = "SELECT * FROM payment";
+		String sql = "SELECT * FROM payment ORDER BY id DESC;";
 		return query(sql, new PaymentMapper());
 	}
 

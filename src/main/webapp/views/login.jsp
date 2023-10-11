@@ -12,16 +12,15 @@
 <body>
 	<div class="login__app">
 		<div class="title">
-			<a class="login__navi" href="<c:url value='/home'/>">Đăng nhập </a>
+			<a class="login__navi" href="">Đăng nhập </a>
 		</div>
 		<div class="login__form">
 			<div class="form__wrap">
-				<form class="form"  action="">
+				<form class="form" action="<c:url value='/login'/>" method="post">
 					<label for="fname">Tài khoản:</label><br> <input
-						class="login__login" type="text" id="fname" name="fname"
-						value="UserName"><br> <label for="lname">Mật khẩu:</label><br>
-					<input class="login__login" type="text" id="lname" name="lname"
-						value="Password"><br>
+						class="login__login" type="text" id="name" name="name"><br>
+					<label for="lname">Mật khẩu:</label><br> <input
+						class="login__login" type="text" id="password" name="password"><br>
 					<br>
 					<button class="login__btn" type="submit">Login</button>
 				</form>
