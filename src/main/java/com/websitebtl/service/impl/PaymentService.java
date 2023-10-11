@@ -32,4 +32,9 @@ public class PaymentService implements IPaymentService {
 		Long id = paymentDao.save(paymentModel);
 		return paymentDao.findOne(id);
 	}
+
+	@Override
+	public void delete(long id) {
+		paymentDao.delete(id);
+	}
 }

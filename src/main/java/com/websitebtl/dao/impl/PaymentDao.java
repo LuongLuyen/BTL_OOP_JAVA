@@ -39,4 +39,10 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 		List<PaymentModel> payment = query(sql, new PaymentMapper(), id);
 		return payment.isEmpty() ? null : payment.get(0);
 	}
+
+	@Override
+	public void delete(long id) {
+		String sql = "DELETE FROM payment WHERE id = ?";
+		update(sql, id);
+	}
 }

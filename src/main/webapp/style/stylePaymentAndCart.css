@@ -26,6 +26,7 @@
 	margin-bottom: 10px;
 	border-radius: 10px;
 }
+
 .cart__main-itemk {
 	width: 99%;
 	display: flex;
@@ -56,19 +57,18 @@
 }
 
 .cart__main-payment {
-	 border-top: solid 1px #c0c0c0; 
-	height : 100px;
+	border-top: solid 1px #c0c0c0;
 	background-color: #191919;
 	position: fixed;
- 	z-index: 1; 
-	bottom: 40px;
+	z-index: 1;
+	bottom: 35px;
 	width: 80vw;
-	height: 100px; 
+	height: 120px;
 }
 
 .cart__main-total {
-	margin-top: 10px; 
-	color : red;
+	margin-top: 10px;
+	color: red;
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: flex-end;
@@ -81,6 +81,7 @@
 	display: flex;
 	justify-content: space-between;
 }
+
 .cart__main-pay-item {
 	display: flex;
 	justify-content: center;
@@ -91,6 +92,18 @@
 	color: #333;
 	border-radius: 5px;
 }
+
 .cart__main-dem {
 	color: #191919;
+}
+
+.button-cart {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #00ff00;
+	color: #333;
+	border-radius: 5px;
+	width: 100px;
+	height: 40px;
 }

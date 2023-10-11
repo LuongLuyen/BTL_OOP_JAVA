@@ -29,6 +29,11 @@ public class PaymentAndCartController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String type = request.getParameter("type");
+		if(type.equals("delete")) {
+			String idDeleteStr = request.getParameter("deleteId");
+			Long id = Long.parseLong(idDeleteStr);
+			PaymentService.delete(id);
+		}
 		if(type.equals("transport")) {
 			String transport = request.getParameter("transport");
 			request.setAttribute("ProductModel", PaymentService.findCategory(transport));

@@ -9,4 +9,5 @@ public interface IPaymentService {
 	List<PaymentModel> findCategory(String category);
 	List<PaymentModel> findByIdUser(Long id);
 	PaymentModel save(PaymentModel paymentModel);
+	void delete(long id);
 }

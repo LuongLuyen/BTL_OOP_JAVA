@@ -73,10 +73,24 @@
 								<h3>${item.shortDescription }</h3>
 								<div class="cart__main-price">
 									<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-									<div>đ ${item.price }</div>
+									<div class ="cart__main-total">đ ${item.price }</div>
 								</div>
 								<div>7 ngày trả hàng</div>
-								<div>Số lượng: x2</div>
+								<div>Số lượng: x1</div>
+								<c:if test="${ empty item.transport }">
+									<br />
+									<form action="<c:url value='/payment'/>" method="post">
+										<div class="button-cart">
+											<input type="hidden" name="deleteId" value="${item.id }">
+											<input type="hidden" name="type" value="delete"> 
+											<input class="admin-input" type="submit" value="Delete">
+										</div>
+									</form>
+								</c:if>
+								<c:if test="${not empty item.transport }">
+									<br />
+									<div class="cart__main-pay-item">${item.transport }</div>
+								</c:if>
 							</div>
 						</div>
 					</c:forEach>

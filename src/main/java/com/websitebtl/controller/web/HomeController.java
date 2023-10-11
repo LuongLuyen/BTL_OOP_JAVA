@@ -48,21 +48,34 @@ public class HomeController extends HttpServlet {
 			paymentModel.setUserId(productModel.getUserId());
 			paymentModel.setShortDescription(productModel.getShortDescription());
 			paymentModel.setThumbnail(productModel.getThumbnail());
-			paymentModel.setTransport("all");
+			paymentModel.setTransport("");
 			paymentModel.setCategory(productModel.getCategory());
 			paymentModel.setPrice(productModel.getPrice());
 			listPaymentModels.add(paymentModel);
 			paymentService.save(paymentModel);
-			
-			listPaymentModels = paymentService.findByIdUser(1L);
-			
-			request.setAttribute("ProductModel",listPaymentModels);
-			RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+			request.setAttribute("ProductModel", ProductService.findAll());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 			rd.forward(request, response);
 		}
 		if(type.equals("buy")) {
 			String buyID = request.getParameter("buy");
-			
+			Long id = Long.parseLong(buyID);
+			List<PaymentModel> listPaymentModels = new ArrayList<>();
+			ProductModel productModel = new ProductModel();
+			PaymentModel paymentModel = new PaymentModel();
+			productModel = ProductService.findById(id);
+			paymentModel.setUserId(productModel.getUserId());
+			paymentModel.setShortDescription(productModel.getShortDescription());
+			paymentModel.setThumbnail(productModel.getThumbnail());
+			paymentModel.setTransport("");
+			paymentModel.setCategory(productModel.getCategory());
+			paymentModel.setPrice(productModel.getPrice());
+			listPaymentModels.add(paymentModel);
+			paymentService.save(paymentModel);
+			listPaymentModels = paymentService.findByIdUser(1L);
+			request.setAttribute("ProductModel",listPaymentModels);
+			RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+			rd.forward(request, response);
 		}
 		
 		if (type.equals("category")) {
