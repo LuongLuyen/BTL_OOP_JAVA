@@ -28,6 +28,7 @@ public class PaymentAndCartController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
 		if(type.equals("delete")) {
 			String idDeleteStr = request.getParameter("deleteId");

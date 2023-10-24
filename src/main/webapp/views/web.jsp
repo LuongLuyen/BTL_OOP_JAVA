@@ -122,26 +122,7 @@
 							</div>
 						</div>
 					</form>
-					<form action="<c:url value='/home'/>" method="post">
-						<div class="filter__admin">
-							<div class="filter__btn">
-								<input type="hidden" name="newProduct" value="4"> <input
-									type="hidden" name="sortSC" value="DESC"> <input
-									type="hidden" name="type" value="sort"> <input
-									class="admin-input" type="submit" value="Phổ biến">
-							</div>
-						</div>
-					</form>
-					<form action="<c:url value='/home'/>" method="post">
-						<div class="filter__admin">
-							<div class="filter__btn">
-								<input type="hidden" name="newProduct" value="4"> <input
-									type="hidden" name="sortSC" value="DESC"> <input
-									type="hidden" name="type" value="sort"> <input
-									class="admin-input" type="submit" value="Bán chạy">
-							</div>
-						</div>
-					</form>
+					
 					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							Giá: <select name="sortSC" class="filter__input">
@@ -164,7 +145,7 @@
 							<div class="web__product-btn">
 								<form action="<c:url value='/home'/>" method="post">
 									<div class="web__product-buy">
-									<input type="hidden" name="buy" value="${item.id}"> 
+									<input type="hidden" name="id" value="${item.id}"> 
 									<input type="hidden" name="type" value="buy"> 
 									<input class="none" type="submit" value="Mua ngay">
 									</div>
@@ -172,7 +153,7 @@
 								<div class="web__product-cart">
 								<form action="<c:url value='/home'/>" method="post">
 										<div class="web__product-cart">
-											<input type="hidden" name="cart" value="${item.id}">
+											<input type="hidden" name="id" value="${item.id}">
 											<input type="hidden" name="type" value="cart"> <input
 												class="none" type="submit" value="Giỏ hàng">
 										</div>

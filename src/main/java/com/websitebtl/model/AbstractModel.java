@@ -8,6 +8,17 @@ public class AbstractModel {
 	private String price;
 	private String thumbnail;
 
+	public AbstractModel(Long id, Long userId, String shortDescription, String category, String price,
+			String thumbnail) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.shortDescription = shortDescription;
+		this.category = category;
+		this.price = price;
+		this.thumbnail = thumbnail;
+	}
+
 	public Long getId() {
 		return id;
 	}

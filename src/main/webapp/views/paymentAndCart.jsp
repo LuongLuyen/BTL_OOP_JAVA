@@ -29,35 +29,35 @@
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="transport" value="cho-thanh-toan">
+						<input type="hidden" name="transport" value="Chờ thanh toán">
 						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Chờ thanh toán">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="transport" value="van-chuyen">
+						<input type="hidden" name="transport" value="Vận chuyển">
 						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Vận chuyển">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="transport" value="dang-giao"> <input
+						<input type="hidden" name="transport" value="Đang giao"> <input
 							type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Đang giao">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="transport" value="hoan-thanh">
+						<input type="hidden" name="transport" value="Hoàn thành">
 						<input type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Hoàn thành">
 					</form>
 				</div>
 				<div class="admin__nav-item">
 					<form action="<c:url value='/payment'/>" method="post">
-						<input type="hidden" name="transport" value="da-huy"> <input
+						<input type="hidden" name="transport" value="Đã hủy"> <input
 							type="hidden" name="type" value="transport"> <input
 							class="admin-input" type="submit" value="Đã hủy">
 					</form>
@@ -73,38 +73,41 @@
 								<h3>${item.shortDescription }</h3>
 								<div class="cart__main-price">
 									<div>Phân loại hàng: T80 ĐEN LG VÀNG,XL 55-65kg</div>
-									<div class ="cart__main-total">đ ${item.price }</div>
+									<div class="cart__main-total">đ ${item.price }</div>
 								</div>
 								<div>7 ngày trả hàng</div>
 								<div>Số lượng: x1</div>
-								<c:if test="${ empty item.transport }">
-									<br />
-									<form action="<c:url value='/payment'/>" method="post">
-										<div class="button-cart">
-											<input type="hidden" name="deleteId" value="${item.id }">
-											<input type="hidden" name="type" value="delete"> 
-											<input class="admin-input" type="submit" value="Delete">
-										</div>
-									</form>
-								</c:if>
-								<c:if test="${not empty item.transport }">
-									<br />
-									<div class="cart__main-pay-item">${item.transport }</div>
-								</c:if>
+								<div class="cart__main-pay-item">Thanh toán</div>
+
 							</div>
+							<c:if test="${ empty item.transport }">
+								<br />
+								<form action="<c:url value='/payment'/>" method="post">
+									<div class="button-cart">
+										<input type="hidden" name="deleteId" value="${item.id }">
+										<input type="hidden" name="type" value="delete"> <input
+											class="admin-input" type="submit" value="Delete">
+									</div>
+								</form>
+							</c:if>
+							<c:if test="${not empty item.transport }">
+								<br />
+								<div class="cart__main-pay-item">${item.transport }</div>
+							</c:if>
+
 						</div>
 					</c:forEach>
-					<div class="cart__main-itemk">
+					<!-- <div class="cart__main-itemk">
 						<h1 class="cart__main-dem">.</h1>
-					</div>
+					</div> -->
 				</div>
-				<div class="cart__main-payment">
+				<!-- <div class="cart__main-payment">
 					<div class="cart__main-total">Thành tiền: đ 599.000</div>
 					<div class="cart__main-pay">
 						<div class="cart__main-pay-item">Liên hệ người bán</div>
 						<div class="cart__main-pay-item">Thanh toán</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
