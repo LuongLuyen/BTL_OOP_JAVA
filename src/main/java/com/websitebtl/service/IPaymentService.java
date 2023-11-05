@@ -10,4 +10,6 @@ public interface IPaymentService {
 	List<PaymentModel> findByIdUser(Long id);
 	PaymentModel save(PaymentModel paymentModel);
 	void delete(long id);
+	PaymentModel findOne(Long id);
+	PaymentModel update(PaymentModel paymentModel);
 }

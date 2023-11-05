@@ -77,7 +77,16 @@
 								</div>
 								<div>7 ngày trả hàng</div>
 								<div>Số lượng: x1</div>
-								<div class="cart__main-pay-item">Thanh toán</div>
+								<div class="cart__main-pay-item">
+								
+								<form action="<c:url value='/payment'/>" method="post">
+									<div class="button-cart">
+										<input type="hidden" name="status" value="${item.id }">
+										<input type="hidden" name="type" value="status"> <input
+											class="admin-input" type="submit" value="Thanh toán">
+									</div>
+								</form>
+								</div>
 
 							</div>
 							<c:if test="${ empty item.transport }">

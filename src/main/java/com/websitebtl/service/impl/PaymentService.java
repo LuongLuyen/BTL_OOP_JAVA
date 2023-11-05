@@ -37,4 +37,15 @@ public class PaymentService implements IPaymentService {
 	public void delete(long id) {
 		paymentDao.delete(id);
 	}
+
+	@Override
+	public PaymentModel findOne(Long id) {
+		return paymentDao.findOne(id);
+	}
+
+	@Override
+	public PaymentModel update(PaymentModel paymentModel) {
+		paymentDao.update(paymentModel);
+		return paymentDao.findOne(paymentModel.getId());
+	}
 }

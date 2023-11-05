@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <link href="<c:url value='/style/styleLogin.css' />" rel="stylesheet"
 	type="text/css" media="all" />
-<title>Home</title>
+<title>Login</title>
 </head>
 <body>
 	<div class="login__app">

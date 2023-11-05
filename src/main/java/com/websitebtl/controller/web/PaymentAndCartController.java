@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.websitebtl.model.PaymentModel;
 import com.websitebtl.service.IPaymentService;
 
 @WebServlet(urlPatterns = {"/payment"})
@@ -30,10 +31,51 @@ public class PaymentAndCartController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
+		if(type.equals("status")) {
+			String statusId = request.getParameter("status");
+			Long id = Long.parseLong(statusId);
+			PaymentModel paymentModel = new PaymentModel(null,null,null,null,null,null,null);
+			paymentModel = PaymentService.findOne(id);
+			
+			if(paymentModel.getTransport().equals("")) {
+				paymentModel.setTransport("Chờ thanh toán");
+				PaymentService.update(paymentModel);
+				request.setAttribute("ProductModel", PaymentService.findCategory("Chờ thanh toán"));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+				rd.forward(request, response);
+			}
+			if(paymentModel.getTransport().equals("Chờ thanh toán")) {
+				paymentModel.setTransport("Vận chuyển");
+				PaymentService.update(paymentModel);
+				request.setAttribute("ProductModel", PaymentService.findCategory("Vận chuyển"));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+				rd.forward(request, response);
+			}
+			if(paymentModel.getTransport().equals("Vận chuyển")) {
+				paymentModel.setTransport("Đang giao");
+				PaymentService.update(paymentModel);
+				request.setAttribute("ProductModel", PaymentService.findCategory("Đang giao"));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+				rd.forward(request, response);
+			}
+			if(paymentModel.getTransport().equals("Đang giao")) {
+				paymentModel.setTransport("Hoàn thành");
+				PaymentService.update(paymentModel);
+				request.setAttribute("ProductModel", PaymentService.findCategory("Hoàn thành"));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+				rd.forward(request, response);
+			}
+			if(paymentModel.getTransport().equals("Hoàn thành")) {
+				request.setAttribute("ProductModel", PaymentService.findCategory("Hoàn thành"));
+				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+				rd.forward(request, response);
+			}
+
+		}
 		if(type.equals("delete")) {
 			String idDeleteStr = request.getParameter("deleteId");
-			Long id = Long.parseLong(idDeleteStr);
-			PaymentService.delete(id);
+			Long idD = Long.parseLong(idDeleteStr);
+			PaymentService.delete(idD);
 		}
 		if(type.equals("transport")) {
 			String transport = request.getParameter("transport");

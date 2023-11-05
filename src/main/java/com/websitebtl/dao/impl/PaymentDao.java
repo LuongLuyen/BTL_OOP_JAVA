@@ -45,4 +45,14 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 		String sql = "DELETE FROM payment WHERE id = ?";
 		update(sql, id);
 	}
+
+	@Override
+	public void update(PaymentModel paymentModel) {
+		StringBuilder sql = new StringBuilder("UPDATE payment SET userId = ?, shortDescription = ?,");
+		sql.append(" transport = ?, category = ?, price = ?, thumbnail =?");
+		sql.append(" WHERE id = ?");
+		update(sql.toString(), paymentModel.getUserId(), paymentModel.getShortDescription(), paymentModel.getTransport(),
+				paymentModel.getCategory(), paymentModel.getPrice(), paymentModel.getThumbnail(), paymentModel.getId());
+		
+	}
 }

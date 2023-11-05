@@ -11,4 +11,5 @@ public interface IPaymentDao extends GenericDao {
 	Long save(PaymentModel paymentModel);
 	PaymentModel findOne(Long id);
 	void delete(long id);
+	void update(PaymentModel paymentModel);
 }
