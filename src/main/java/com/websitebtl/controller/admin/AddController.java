@@ -30,10 +30,22 @@ public class AddController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		ProductModel model = FormUtil.toModel(ProductModel.class, request);
-		model.setUserId(1L);
-		ProductService.update(model);
-		request.setAttribute("ProductModel", ProductService.findAll());
+		String type = request.getParameter("type");
+		 ProductModel model = FormUtil.toModel(ProductModel.class, request);
+		switch (type) {
+		case "add":
+			model.setUserId(1L);
+			model = ProductService.save(model);
+			request.setAttribute("ProductModel", ProductService.findAll());
+			break;
+		case "update":
+			model.setUserId(1L);
+			ProductService.update(model);
+			request.setAttribute("ProductModel", ProductService.findAll());
+			break;
+		default:
+			
+		}
 		RequestDispatcher rd = request.getRequestDispatcher("/views/admin.jsp");
 		rd.forward(request, response);
 	}

@@ -13,7 +13,7 @@
 	<div class="edit__app">
 		<div>
 			<div class="edit__title">Thêm sản phẩm</div>
-			<form action="<c:url value='/admin'/>" method="post" accept-charset="UTF-8">
+			<form action="<c:url value='add'/>" method="post" accept-charset="UTF-8">
 					<table class="edit__table">
 						<tr>
 							<th class="edit__name">Tên sản phẩm</th>

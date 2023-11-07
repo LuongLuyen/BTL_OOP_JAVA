@@ -7,7 +7,7 @@ public class AbstractModel {
 	private String category;
 	private String price;
 	private String thumbnail;
-
+	public AbstractModel() {}
 	public AbstractModel(Long id, Long userId, String shortDescription, String category, String price,
 			String thumbnail) {
 		super();

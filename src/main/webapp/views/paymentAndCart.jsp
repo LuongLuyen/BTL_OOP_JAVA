@@ -95,7 +95,7 @@
 									<div class="button-cart">
 										<input type="hidden" name="deleteId" value="${item.id }">
 										<input type="hidden" name="type" value="delete"> <input
-											class="admin-input" type="submit" value="Delete">
+											class="admin-input" type="submit" value="Xóa">
 									</div>
 								</form>
 							</c:if>

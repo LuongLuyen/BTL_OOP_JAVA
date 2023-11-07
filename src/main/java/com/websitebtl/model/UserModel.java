@@ -7,6 +7,16 @@ public class UserModel {
 	private String fullName;
 	private String email;
 	private String role;
+	public UserModel() {}
+	public UserModel(Long id, String userName, String password, String fullName, String email, String role) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.password = password;
+		this.fullName = fullName;
+		this.email = email;
+		this.role = role;
+	}
 	public String getUserName() {
 		return userName;
 	}

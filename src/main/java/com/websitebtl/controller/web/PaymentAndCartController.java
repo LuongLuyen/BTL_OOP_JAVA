@@ -34,7 +34,7 @@ public class PaymentAndCartController extends HttpServlet {
 		if(type.equals("status")) {
 			String statusId = request.getParameter("status");
 			Long id = Long.parseLong(statusId);
-			PaymentModel paymentModel = new PaymentModel(null,null,null,null,null,null,null);
+			PaymentModel paymentModel = new PaymentModel();
 			paymentModel = PaymentService.findOne(id);
 			
 			if(paymentModel.getTransport().equals("")) {

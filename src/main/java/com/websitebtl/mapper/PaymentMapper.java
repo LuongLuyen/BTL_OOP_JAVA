@@ -10,7 +10,7 @@ public class PaymentMapper implements RowMapper<PaymentModel> {
 	@Override
 	public PaymentModel mapRow(ResultSet resultSet) {
 		try {
-			PaymentModel payment = new PaymentModel(null, null, null, null, null, null, null);
+			PaymentModel payment = new PaymentModel();
 			payment.setId(resultSet.getLong("id"));
 			payment.setUserId(resultSet.getLong("userid"));
 			payment.setShortDescription(resultSet.getString("shortdescription"));
