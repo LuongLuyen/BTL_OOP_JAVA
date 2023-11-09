@@ -42,8 +42,8 @@ public class HomeController extends HttpServlet {
 		if(idStr != null) {
 			Long id = Long.parseLong(idStr);
 			List<PaymentModel> listPaymentModels = new ArrayList<>();
-			ProductModel productModel = new ProductModel(null, null, null, null, null, null, null);
-			PaymentModel paymentModel = new PaymentModel(null, null, null, null, null, null, null);
+			ProductModel productModel = new ProductModel();
+			PaymentModel paymentModel = new PaymentModel();
 
 			productModel = ProductService.findById(id);
 			paymentModel.setUserId(productModel.getUserId());

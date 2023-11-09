@@ -24,67 +24,62 @@ public class PaymentAndCartController extends HttpServlet {
 		request.setAttribute("ProductModel", PaymentService.findAll());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
 		rd.forward(request, response);
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String type = request.getParameter("type");
-		if(type.equals("status")) {
+		switch (type) {
+		case "status":
 			String statusId = request.getParameter("status");
 			Long id = Long.parseLong(statusId);
 			PaymentModel paymentModel = new PaymentModel();
 			paymentModel = PaymentService.findOne(id);
-			
-			if(paymentModel.getTransport().equals("")) {
+			switch (paymentModel.getTransport()) {
+			case "":
 				paymentModel.setTransport("Chờ thanh toán");
 				PaymentService.update(paymentModel);
 				request.setAttribute("ProductModel", PaymentService.findCategory("Chờ thanh toán"));
-				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
-				rd.forward(request, response);
-			}
-			if(paymentModel.getTransport().equals("Chờ thanh toán")) {
+				break;
+			case "Chờ thanh toán":
 				paymentModel.setTransport("Vận chuyển");
 				PaymentService.update(paymentModel);
 				request.setAttribute("ProductModel", PaymentService.findCategory("Vận chuyển"));
-				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
-				rd.forward(request, response);
-			}
-			if(paymentModel.getTransport().equals("Vận chuyển")) {
+				break;
+			case "Vận chuyển":
 				paymentModel.setTransport("Đang giao");
 				PaymentService.update(paymentModel);
 				request.setAttribute("ProductModel", PaymentService.findCategory("Đang giao"));
-				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
-				rd.forward(request, response);
-			}
-			if(paymentModel.getTransport().equals("Đang giao")) {
+				break;
+			case "Đang giao":
 				paymentModel.setTransport("Hoàn thành");
 				PaymentService.update(paymentModel);
 				request.setAttribute("ProductModel", PaymentService.findCategory("Hoàn thành"));
-				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
-				rd.forward(request, response);
-			}
-			if(paymentModel.getTransport().equals("Hoàn thành")) {
+				break;
+			case "Hoàn thành":
 				request.setAttribute("ProductModel", PaymentService.findCategory("Hoàn thành"));
-				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
-				rd.forward(request, response);
+				break;
+			default:
+				request.setAttribute("ProductModel", PaymentService.findCategory("Hoàn thành"));
 			}
-
-		}
-		if(type.equals("delete")) {
+			RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
+			rd.forward(request, response);
+			break;
+		case "delete":
 			String idDeleteStr = request.getParameter("deleteId");
 			Long idD = Long.parseLong(idDeleteStr);
 			PaymentService.delete(idD);
-		}
-		if(type.equals("transport")) {
+			request.setAttribute("ProductModel", PaymentService.findAll());
+			break;
+		case "transport":
 			String transport = request.getParameter("transport");
 			request.setAttribute("ProductModel", PaymentService.findCategory(transport));
-		}else {
+			break;
+		default:
 			request.setAttribute("ProductModel", PaymentService.findAll());
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
 		rd.forward(request, response);
-	
 	}
 }
