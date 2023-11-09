@@ -27,11 +27,16 @@
 				</form>
 			</div>
 			<div class="web__user">
-				<span>Nguyen Van Tuan </span> <span>|</span> <a class="web__cart-a"
+				<span>Nguyen Van Tuan </span> 
+				<span>|</span> 
+				<a class="web__cart-a"
 					href="<c:url value='/payment'/>"> <span class="web__cart">Giỏ
 						hàng</span>
 				</a>
-
+				<form action="<c:url value='/home'/>" method="post">
+					<input type="hidden" name="type" value="logout"> 
+					<input type="submit" value="Logout">
+				</form>
 			</div>
 		</div>
 		<div class="web__main">

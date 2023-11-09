@@ -15,14 +15,14 @@ public class PaymentDao extends AbstractDao implements IPaymentDao {
 	}
 
 	@Override
-	public List<PaymentModel> findCategory(String category) {
-		String sql = "SELECT * FROM payment where transport = ?";
-		return query(sql, new PaymentMapper(),category);
+	public List<PaymentModel> findCategoryByUser(String category, Long id) {
+		String sql = "SELECT * FROM payment where transport = ? AND userId =? ORDER BY id DESC";
+		return query(sql, new PaymentMapper(),category, id);
 	}
 
 	@Override
 	public List<PaymentModel> findByIdUser(Long id) {
-		String sql = "SELECT * FROM payment where userId = ?";
+		String sql = "SELECT * FROM payment where userId = ? ORDER BY id DESC";
 		return query(sql, new PaymentMapper(),id);
 	}
 

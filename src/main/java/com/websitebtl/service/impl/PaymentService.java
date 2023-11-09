@@ -18,8 +18,8 @@ public class PaymentService implements IPaymentService {
 	}
 
 	@Override
-	public List<PaymentModel> findCategory(String category) {
-		return paymentDao.findCategory(category);
+	public List<PaymentModel> findCategoryByUser(String category, Long id) {
+		return paymentDao.findCategoryByUser(category,id);
 	}
 
 	@Override

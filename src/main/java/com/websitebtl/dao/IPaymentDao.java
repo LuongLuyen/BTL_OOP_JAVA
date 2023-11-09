@@ -6,7 +6,7 @@ import com.websitebtl.model.PaymentModel;
 
 public interface IPaymentDao extends GenericDao {
 	List<PaymentModel> findAll();
-	List<PaymentModel> findCategory(String category);
+	List<PaymentModel> findCategoryByUser(String category, Long id);
 	List<PaymentModel> findByIdUser(Long id);
 	Long save(PaymentModel paymentModel);
 	PaymentModel findOne(Long id);

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.websitebtl.model.PaymentModel;
 import com.websitebtl.model.ProductModel;
@@ -37,16 +38,18 @@ public class HomeController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
+		HttpSession session = request.getSession();
 		String type = request.getParameter("type");
 		String idStr = request.getParameter("id");
 		if(idStr != null) {
+			String userIdStr = (String) session.getAttribute("userId");
+			Long userId = Long.parseLong(userIdStr);
 			Long id = Long.parseLong(idStr);
 			List<PaymentModel> listPaymentModels = new ArrayList<>();
 			ProductModel productModel = new ProductModel();
-			PaymentModel paymentModel = new PaymentModel();
-
 			productModel = ProductService.findById(id);
-			paymentModel.setUserId(productModel.getUserId());
+			PaymentModel paymentModel = new PaymentModel();
+			paymentModel.setUserId(userId);
 			paymentModel.setShortDescription(productModel.getShortDescription());
 			paymentModel.setThumbnail(productModel.getThumbnail());
 			paymentModel.setTransport("");
@@ -60,18 +63,24 @@ public class HomeController extends HttpServlet {
 				rd.forward(request, response);
 			}
 			if (type.equals("buy")) {
-				listPaymentModels = paymentService.findByIdUser(1L);
+				listPaymentModels = paymentService.findByIdUser(userId);
 				request.setAttribute("ProductModel", listPaymentModels);
 				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
 				rd.forward(request, response);
 			}
 
 		}
-		if (type.equals("category")) {
+		switch (type) {
+		case "category":
 			String category = request.getParameter("category");
 			request.setAttribute("ProductModel", ProductService.findCategory(category));
-		}
-		if (type.equals("search")) {
+			break;
+		case "logout":
+			session.removeAttribute("userId");
+			RequestDispatcher rd = request.getRequestDispatcher("/views/login.jsp");
+			rd.forward(request, response);
+			break;
+		case "search":
 			String search = request.getParameter("search");
 			List<ProductModel> productModel = new ArrayList<>();
 			List<ProductModel> dataSearch = new ArrayList<>();
@@ -82,8 +91,8 @@ public class HomeController extends HttpServlet {
 				}
 			}
 			request.setAttribute("ProductModel", dataSearch);
-		}
-		if (type.equals("sort")) {
+			break;
+		case "sort":
 			String sort = request.getParameter("sortSC");
 			String limitStr = request.getParameter("newProduct");
 			if (limitStr != null) {
@@ -92,6 +101,9 @@ public class HomeController extends HttpServlet {
 			} else {
 				request.setAttribute("ProductModel", ProductService.orderById(sort, null));
 			}
+			break;
+		default:
+			request.setAttribute("ProductModel", ProductService.findAll());
 		}
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 		rd.forward(request, response);
