@@ -8,6 +8,9 @@ Insert into product(userId,shortDescription,thumbnail,status,category,price) val
 Insert into product(userId,shortDescription,thumbnail,status,category,price) values(1,'Quần short đùi trơn unisex ZUTEE thể thao basic nam nữ phong cách đường phố Hàn Quốc ullzang','https://down-vn.img.susercontent.com/file/c3ea98e7aae1b7a4f9be91983a5ab888','200','quan-dui',200000);
 Insert into product(userId,shortDescription,thumbnail,status,category,price) values(1,'Quần dài thể thao dáng rộng phong cách Hồng Kông thời trang thu đông 2023 dành cho nam','https://down-vn.img.susercontent.com/file/9d540a27a8b6ee769b61df57e99c33f1','200','quan-dai',350000);
 
-Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(1,'Áo Sơ Mi Nam Dài Tay Cổ Bẻ Form Rộng Thời Trang Hàn','https://down-vn.img.susercontent.com/file/sg-11134211-7qvd2-lffbx7p9vsyv95','cho-thanh-toan','ao-nam',100000);
-Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(1,'Áo Khoác Bóng Chày Có Mũ Trùm Dáng Rộng Màu Gradient Phong Cách Đường Phố Hàn Quốc Cá Tính Faru099','https://down-vn.img.susercontent.com/file/30ad440ebef02e3b4a754f667166483a','van-chuyen','ao-nam',100000);
+Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(1,'Áo Sơ Mi Nam Dài Tay Cổ Bẻ Form Rộng Thời Trang Hàn','https://down-vn.img.susercontent.com/file/sg-11134211-7qvd2-lffbx7p9vsyv95','Chờ thanh toán','ao-nam',100000);
+Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(1,'Áo Khoác Bóng Chày Có Mũ Trùm Dáng Rộng Màu Gradient Phong Cách Đường Phố Hàn Quốc Cá Tính Faru099','https://down-vn.img.susercontent.com/file/30ad440ebef02e3b4a754f667166483a','Đã hủy','ao-nam',100000);
+
+Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(2,'Áo Sơ Mi Nam Dài Tay Cổ Bẻ Form Rộng Thời Trang Hàn','https://down-vn.img.susercontent.com/file/sg-11134211-7qvd2-lffbx7p9vsyv95','Đang giao','ao-nam',100000);
+Insert into payment(userId,shortDescription,thumbnail,transport,category,price) values(2,'Áo Khoác Bóng Chày Có Mũ Trùm Dáng Rộng Màu Gradient Phong Cách Đường Phố Hàn Quốc Cá Tính Faru099','https://down-vn.img.susercontent.com/file/30ad440ebef02e3b4a754f667166483a','Đã hủy','ao-nam',100000);
 

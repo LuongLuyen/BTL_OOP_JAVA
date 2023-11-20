@@ -43,7 +43,14 @@ public class LoginController extends HttpServlet {
 			rd.forward(request, response);
 		}else if(userName.equals(userModel.getUserName()) && password.equals(userModel.getPassword())) {
 			session.setAttribute("userId", userModel.getId().toString());
+			String userIdStr = (String) session.getAttribute("userId");
+			Long userId = Long.parseLong(userIdStr);
+			String role = userIdStr;
+			if(userId !=1) {
+				role= "";
+			}
 			request.setAttribute("ProductModel", ProductService.findAll());
+			request.setAttribute("role", role);
 			RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 			rd.forward(request, response);
 		}

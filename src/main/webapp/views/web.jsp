@@ -27,15 +27,22 @@
 				</form>
 			</div>
 			<div class="web__user">
-				<span>Nguyen Van Tuan </span> 
-				<span>|</span> 
-				<a class="web__cart-a"
+				<c:if test="${not empty role}">
+					<a class="web__cart-a" href="<c:url value='/admin'/>"> <span
+						class="admin"> Admin</span>
+					</a>
+				</c:if>
+				<c:if test="${empty role }">
+					<span class="admin"> Hello</span>
+				</c:if>
+				<span> |</span> <a class="web__cart-a"
 					href="<c:url value='/payment'/>"> <span class="web__cart">Giỏ
 						hàng</span>
 				</a>
-				<form action="<c:url value='/home'/>" method="post">
-					<input type="hidden" name="type" value="logout"> 
-					<input type="submit" value="Logout">
+				<form class="web__logout" action="<c:url value='/home'/>"
+					method="post">
+					<input type="hidden" name="type" value="logout"> <input
+						class="none" type="submit" value="Thoát ➤">
 				</form>
 			</div>
 		</div>
@@ -127,7 +134,7 @@
 							</div>
 						</div>
 					</form>
-					
+
 					<form action="<c:url value='/home'/>" method="post">
 						<div class="filter__admin">
 							Giá: <select name="sortSC" class="filter__input">
@@ -150,16 +157,16 @@
 							<div class="web__product-btn">
 								<form action="<c:url value='/home'/>" method="post">
 									<div class="web__product-buy">
-									<input type="hidden" name="id" value="${item.id}"> 
-									<input type="hidden" name="type" value="buy"> 
-									<input class="none" type="submit" value="Mua ngay">
+										<input type="hidden" name="id" value="${item.id}"> <input
+											type="hidden" name="type" value="buy"> <input
+											class="none" type="submit" value="Mua ngay">
 									</div>
 								</form>
 								<div class="web__product-cart">
-								<form action="<c:url value='/home'/>" method="post">
+									<form action="<c:url value='/home'/>" method="post">
 										<div class="web__product-cart">
-											<input type="hidden" name="id" value="${item.id}">
-											<input type="hidden" name="type" value="cart"> <input
+											<input type="hidden" name="id" value="${item.id}"> <input
+												type="hidden" name="type" value="cart"> <input
 												class="none" type="submit" value="Giỏ hàng">
 										</div>
 									</form>
