@@ -47,11 +47,15 @@ public class HomeController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
+		String userIdStr = (String) session.getAttribute("userId");
+		Long userId = Long.parseLong(userIdStr);
+		String role = userIdStr;
+		if(userId !=1) {
+			role= "";
+		}
 		String type = request.getParameter("type");
 		String idStr = request.getParameter("id");
 		if(idStr != null) {
-			String userIdStr = (String) session.getAttribute("userId");
-			Long userId = Long.parseLong(userIdStr);
 			Long id = Long.parseLong(idStr);
 			List<PaymentModel> listPaymentModels = new ArrayList<>();
 			ProductModel productModel = new ProductModel();
@@ -67,12 +71,14 @@ public class HomeController extends HttpServlet {
 			paymentService.save(paymentModel);
 			if (type.equals("cart")) {
 				request.setAttribute("ProductModel", ProductService.findAll());
+				request.setAttribute("role", role);
 				RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 				rd.forward(request, response);
 			}
 			if (type.equals("buy")) {
 				listPaymentModels = paymentService.findByIdUser(userId);
 				request.setAttribute("ProductModel", listPaymentModels);
+				request.setAttribute("role", role);
 				RequestDispatcher rd = request.getRequestDispatcher("/views/paymentAndCart.jsp");
 				rd.forward(request, response);
 			}
@@ -113,6 +119,7 @@ public class HomeController extends HttpServlet {
 		default:
 			request.setAttribute("ProductModel", ProductService.findAll());
 		}
+		request.setAttribute("role", role);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 		rd.forward(request, response);
 	}
