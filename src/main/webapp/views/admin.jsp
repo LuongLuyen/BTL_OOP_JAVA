@@ -12,6 +12,10 @@
 <body>
 	<div class="admin__app">
 		<div class="admin__title">
+			<form action="<c:url value='/home'/>" method="get">
+				<input class="admin__title" style="margin-right: 400px"
+					type="submit" value="Home">
+			</form>
 			<form action="<c:url value='/admin'/>" method="get">
 				<input class="admin__title" type="submit" value="Trang quản trị">
 			</form>

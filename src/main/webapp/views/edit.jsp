@@ -12,7 +12,15 @@
 <body>
 	<div class="edit__app">
 		<div>
-			<div class="edit__title">Edit Product</div>
+			<div class="edit__title">
+		
+				<div class="admin__title" style="margin-right: 400px">
+					<a style="text-decoration: none; color: #fff"
+						href="/BTL_OOP_JAVA/home">Home</a>
+				</div>
+				<div>Edit Product</div>
+						
+			</div>
 			<form action="<c:url value='/add'/>" method="post">
 
 				<table class="edit__table">
@@ -52,8 +60,8 @@
 				</table>
 				<input type="hidden" id="id" name="id" value="${ProductModel.id}">
 				<div class="edit__submit">
-				    <input type="hidden" name="type" value="update">
-					<input class="edit__submit" type="submit" value="Submit">
+					<input type="hidden" name="type" value="update"> <input
+						class="edit__submit" type="submit" value="Submit">
 				</div>
 			</form>
 		</div>

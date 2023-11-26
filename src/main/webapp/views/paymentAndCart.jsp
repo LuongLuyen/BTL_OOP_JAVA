@@ -14,6 +14,9 @@
 <body>
 	<div class="admin__app">
 		<div class="admin__title">
+			<div class="admin__title" style="margin-right: 400px">
+			<a style="text-decoration: none; color: #fff" href="/BTL_OOP_JAVA/home">Home</a>
+			</div>
 			<form action="<c:url value='/payment'/>" method="get">
 				<input class="admin__title" type="submit" value="Đơn mua">
 			</form>
@@ -78,14 +81,14 @@
 								<div>7 ngày trả hàng</div>
 								<div>Số lượng: x1</div>
 								<div class="cart__main-pay-item">
-								
-								<form action="<c:url value='/payment'/>" method="post">
-									<div class="button-cart">
-										<input type="hidden" name="status" value="${item.id }">
-										<input type="hidden" name="type" value="status"> <input
-											class="admin-input" type="submit" value="Thanh toán">
-									</div>
-								</form>
+
+									<form action="<c:url value='/payment'/>" method="post">
+										<div class="button-cart">
+											<input type="hidden" name="status" value="${item.id }">
+											<input type="hidden" name="type" value="status"> <input
+												class="admin-input" type="submit" value="Thanh toán">
+										</div>
+									</form>
 								</div>
 
 							</div>

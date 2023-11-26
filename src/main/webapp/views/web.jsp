@@ -13,9 +13,8 @@
 	<div class="web__app">
 		<div class="web__header">
 			<div class="web__logo">
-				<form action="<c:url value='/home'/>" method="get">
-					<input class="none" type="submit" value="Logo">
-				</form>
+				<a style="text-decoration: none; color: #fff"
+					href="/BTL_OOP_JAVA/home">Home</a>
 			</div>
 
 			<div class="web__search">

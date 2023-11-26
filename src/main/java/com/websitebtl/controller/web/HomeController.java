@@ -30,6 +30,14 @@ public class HomeController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String userIdStr = (String) session.getAttribute("userId");
+		Long userId = Long.parseLong(userIdStr);
+		String role = userIdStr;
+		if(userId !=1) {
+			role= "";
+		}
+		request.setAttribute("role", role);
 		request.setAttribute("ProductModel", ProductService.findAll());
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web.jsp");
 		rd.forward(request, response);
