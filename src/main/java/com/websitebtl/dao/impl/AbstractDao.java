@@ -13,18 +13,29 @@ import com.websitebtl.dao.GenericDao;
 import com.websitebtl.mapper.RowMapper;
 
 public class AbstractDao implements GenericDao {
+//	public Connection getConnection() {
+//		try {
+//			Class.forName("com.mysql.cj.jdbc.Driver");
+//			String url = "jdbc:mysql://localhost:3306/btloopjava";
+//			String user = "root";
+//			String password = "luyen123";
+//			return DriverManager.getConnection(url, user, password);
+//		} catch (ClassNotFoundException | SQLException e) {
+//			return null;
+//		}
+//	}
 	public Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/btloopjava";
-			String user = "root";
-			String password = "luyen123";
+			String url = System.getenv("DB_URL");
+			String user = System.getenv("DB_USER");
+			String password = System.getenv("DB_PASSWORD");
 			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			return null;
 		}
 	}
-	
+
 	private void setParameter(PreparedStatement statement, Object... parameters) {
 		try {
 			for (int i = 0; i < parameters.length; i++) {
@@ -34,14 +45,14 @@ public class AbstractDao implements GenericDao {
 					statement.setLong(index, (Long) parameter);
 				} else if (parameter instanceof String) {
 					statement.setString(index, (String) parameter);
-				} else if (parameter instanceof Integer) 
+				} else if (parameter instanceof Integer)
 					statement.setInt(index, (Integer) parameter);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Override
 	public <T> List<T> query(String sql, RowMapper<T> rowMapper, Object... parameters) {
 		List<T> results = new ArrayList<>();
@@ -75,6 +86,7 @@ public class AbstractDao implements GenericDao {
 			}
 		}
 	}
+
 	@Override
 	public void update(String sql, Object... parameters) {
 		Connection connection = null;
@@ -107,6 +119,7 @@ public class AbstractDao implements GenericDao {
 			}
 		}
 	}
+
 	@Override
 	public Long insert(String sql, Object... parameters) {
 		Connection connection = null;
